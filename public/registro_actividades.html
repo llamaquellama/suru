@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+<link rel="stylesheet" href="css/registroActividades.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600" rel="stylesheet">
+<link rel="shortcut icon" type="image/png" href="img/favIconSuru.png"/>
+<title>Suru | Registro Actividades</title>
+</head>
+
+<body id="home">
+<nav class="navbar navbar-expand-md navbar-light pb-2" id="main-nav">
+  <div class="container">
+     <a href="index.html" class="navbar-brand align-center py-5">
+        <img src="img/logo2.png" width="75" height="75" alt="logo image">
+    <br><h3 class="align-center text-center">Suru</h3>
+    </a> </div>
+</nav>
+<section>
+  <div class="container mb-5">
+    <div class="card px-md-5">
+      <div class="card-header">
+        <h5 class="align-center pt-4">Registro Actividades</h5>
+      </div>
+      <div class="card-body">
+        <form id="formularioEmpresario">
+          <div class="form-row">
+            <div class="col-md-12 form-group"> 
+              <img src="img/actividad3.png" alt="" class="img-fluid my-4 d-block align-center foto-actividad"> 
+              <a href="" class="rounded-circle botonRedondo align-center"> 
+                <i class="fas fa-camera"></i> 
+              </a> </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="col-md-6 form-group pr-md-4">
+              <div class="form-row">
+                <label for="txtNombre">Nombre</label>
+                <input id="txtNombre" type="text" class="form-control form-control-sm">
+              </div>
+            </div>
+            <div class="col-md-6 form-group pl-md-4">
+              <div class="form-row">
+                <label for="slctCategoria">Categoría</label>
+                <select id="slctCategoria" class="form-control form-control-sm">
+                  <option value="">(Seleccione)</option>
+                  <option>Cat1</option>
+                  <option>Cat2</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6 form-group pr-md-4">
+              <div class="form-row">
+                <label for="txtFecha">Fecha</label>
+                <input id="txtFecha" type="date" class="form-control form-control-sm">
+              </div>
+            </div>
+            <div class="col-md-6 form-group pl-md-4">
+              <div class="form-row">
+                <label for="txtHora">Hora</label>
+                <input id="txtHora" type="text" class="form-control form-control-sm">
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6 form-group pr-md-4">
+              <div class="form-row">
+                <label for="txtCosto">Costo</label>
+                <input id="txtCosto" type="text" class="form-control form-control-sm">
+              </div>
+            </div>
+            <div class="col-md-6 form-group pl-md-4">
+              <div class="form-row">
+                <label for="txtCupos">Cupos Disponibles</label>
+                <input id="txtCupos" type="text" class="form-control form-control-sm">
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+              <div class="col-md-6 form-group pr-md-4">
+                <div class="form-row">
+                  <label for="txtEtiquetas">Etiquetas</label>
+                  <input id="txtEtiquetas" type="text" class="form-control form-control-sm">
+                </div>
+              </div>
+              <div class="col-md-6 form-group pl-md-4">
+                <div class="form-row">
+                  <label for="slctPatrocinador">Patrocinadores</label>
+                  <select id="slctPatrocinador" class="form-control form-control-sm">
+                    <option value="">(Seleccione)</option>
+                    <option>Patrocinador 1</option>
+                    <option>Patrocinador 2</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          <div class="form-row">
+            <div class="col-md-12 form-group">
+              <div class="form-row">
+                <label for="txtDescripcion">Descripción</label>
+                <textarea id="txtDescripcion" class="col-md-12 form-control form-control-sm"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-3 form-group pr-md-2">
+              <label for="slctProvincia">DIRECCION</label>
+            </div>
+            <div class="col-md-3 form-group pr-md-2">
+              <label for="slctProvincia">Provincia</label>
+              <select id="slctProvincia" class="form-control form-control-sm">
+                <option value="">(Seleccione)</option>
+                <option>San Jose</option>
+                <option>Heredia</option>
+                <option>Alajuela</option>
+                <option>Cartago</option>
+                <option>Guanacaste</option>
+                <option>Limón</option>
+                <option>Puntarenas</option>
+              </select>
+            </div>
+            <div class="col-md-3 form-group pr-md-2">
+              <label for="slctDistrito">Distrito</label>
+              <select id="slctDistrito" class="form-control form-control-sm">
+                <option value="">(Seleccione)</option>
+                <option>San Jose</option>
+                <option>Heredia</option>
+                <option>Alajuela</option>
+                <option>Cartago</option>
+                <option>Guanacaste</option>
+                <option>Limón</option>
+                <option>Puntarenas</option>
+              </select>
+            </div>
+            <div class="col-md-3 form-group pr-md-2">
+              <label for="slctCanton">Canton</label>
+              <select id="slctCanton" class="form-control form-control-sm">
+                <option value="">(Seleccione)</option>
+                <option>San Jose</option>
+                <option>Heredia</option>
+                <option>Alajuela</option>
+                <option>Cartago</option>
+                <option>Guanacaste</option>
+                <option>Limón</option>
+                <option>Puntarenas</option>
+              </select>
+            </div>
+          </div>
+        
+
+          <div class="form-row">
+              <div class="col-md-12 form-group pr-md-2">
+                  <label for="slctUbicacion">Ubicación</label>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3930.0231301816475!2d-84.0509619495519!3d9.932031492862937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2scr!4v1541731544799" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+              </div>
+          </div>
+          <div class="form-row">
+            <div class="col text-center"> <a id="btnRegistrar" class="btn btn-danger btn-lg text-white">Registrar</a> </div>
+          </div>
+        
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="page-footer font-small lighten-5 pt-1">
+
+    <div class="container-fluid text-center text-md-left mt-5 offset-1">
+        <div class="row mt-3">
+            <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+
+                <h6 class="text-uppercase font-weight-bold">Suru</h6>
+                <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>Seguínos en Redes Sociales</p>
+                <div class="text-md-left">
+                    <i class="fab fa-facebook-f mr-4"></i>
+                    <i class="fab fa-twitter  mr-4"></i>
+                    <i class="fab fa-google-plus-g  mr-4"></i>
+                </div>
+
+            </div>
+
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                <h6 class="text-uppercase font-weight-bold">Cuenta</h6>
+                <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+               
+
+                <p>
+                    <a class="dark-grey-text" href="#!">Ayuda</a>
+                </p>
+
+            </div>
+
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                <h6 class="text-uppercase font-weight-bold">Descubrir</h6>
+                <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>
+                    <a class="dark-grey-text" href="#!">Eventos</a>
+                </p>
+                <p>
+                    <a class="dark-grey-text" href="#!">Categorías</a>
+                </p>
+                <p>
+                    <a class="dark-grey-text" href="#!">Actividades</a>
+                </p>
+
+            </div>
+
+            <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-md-0 mb-4">
+
+                <h6 class="text-uppercase font-weight-bold">Contacto</h6>
+                <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>
+                    <i class="fa fa-home mr-3"></i> Limón, Costa Rica</p>
+                <p>
+                    <i class="fa fa-envelope mr-3"></i> administracion@suru.com</p>
+                <p>
+                    <i class="fa fa-phone mr-3"></i>800 8000</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <hr>
+    <div class="footer-copyright text-center text-black-50 pb-3">© Suru 2018
+    </div>
+
+
+</footer>
+
+<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script> 
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script> 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script> 
+<script src="js/servicioRegistroActividad.js"></script>
+<script src="js/controladorRegistroActividades.js"></script> 
+</body>
+</html>

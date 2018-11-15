@@ -1,0 +1,28 @@
+/*general*/
+h5{
+    color: #2e3e48;
+}
+body a, span{
+    display: inline-block;
+}
+/*general*/
+/*listarActividades*/
+tbody{
+    background: white;
+}
+thead{
+    background: #04d693;
+}
+
+tr.border th:first-child{
+    border-top-left-radius: 10px;
+}
+tr.border th:last-child{
+    border-top-right-radius: 10px;
+}
+table {
+    border-collapse: collapse;
+    border-radius: 1em;
+    overflow: hidden;
+}
+/*listarActividades*/

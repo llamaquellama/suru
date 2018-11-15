@@ -1,0 +1,18 @@
+/*general*/
+h5{
+    color: #2e3e48;
+}
+body a, span{
+    display: inline-block;
+}
+/*general*/
+/*header*/
+header nav{
+    background: #F17D24;
+}
+/*header*/
+/*footer*/
+#derechos{
+    background: #F17D24;
+}
+/*footer*/

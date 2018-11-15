@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="icon" href="" type="image/x-icon">
+        <title>Suru</title>
+        <meta name="description" content="Landing-page de Suru, empresa turística para encontrar lugares para visitar y conocer y actividades para hacer en Costa Rica.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+        <link rel="stylesheet" href="../public/css/listarActividadesStyle.css">
+        <link rel="stylesheet" href="">
+        <script src="main.js"></script>
+    </head>
+    <body class="">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid py-3">
+                    <a href="#" class="navbar-left">
+                        <img src="img/iconoSuru.png" alt="Logo Suru" width="75px" >
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse row" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item ">
+                                <a class="nav-link" href="#">Volver al panel de control</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link font-italic" href="#">Bienvenido</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="#">CERRAR SESIÓN</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main class="clearfix" id="mainListarActividades">
+            <button id="listarActividad">Listar</button>
+            <div class="table-responsive-md table-responsive-sm table-responsive-xs container">
+                <table class="table table-borderless  table-hover" id="tablaListarActividades">
+                    <thead class="">
+                        <tr class="border">
+                            <th scope="col">Fotografía</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Descripción</th>
+                            <th scope="col">Cupos</th>
+                            <th scope="col">Costo</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>      
+        </main>
+        <script src="./js/servicioListarActividades.js"></script>
+        <script src="./js/controladorListarActividades.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    </body>
+</html>

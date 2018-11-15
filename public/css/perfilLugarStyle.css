@@ -1,0 +1,24 @@
+/*Footer*/
+
+footer {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+footer a{
+    color: #000;
+}
+
+footer a:hover{
+    color: #f46654;
+}
+.detalleActividad{
+    background: #f3f3f3;
+    border-radius: 0.3em;
+}
+
+.box-actividad {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }

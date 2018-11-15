@@ -1,0 +1,111 @@
+
+/*nav*/
+
+
+#navbarNav{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+}
+/*nav*/
+body #perfilUsuarios{
+    font-family: 'Montserrat', sans-serif;
+}
+/*header*/
+
+/*header*/
+
+/* .botonRedondo {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    line-height: 1.33;
+    background-color: #ea4647;
+    display: block;
+    text-align: center;
+    margin: -60px 0 0 30px;
+    position: relative;
+  }
+.botonRedondo i{
+    color: #fff;
+    margin-top: 10px;
+  } */
+
+/*main*/
+main{
+    background: #cb2d3e;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #ef473a, #cb2d3e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #ef473a, #cb2d3e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 0 0 100px 0;
+}
+#contenidoPerfil{
+    padding-right: 0 !important;
+}
+#perfilUsuarios h3, #contactoH6{
+    font-family: 'Montserrat', sans-serif !important;
+    font-style: italic;
+    font-weight: 600!important;
+    color: #566573 ;
+}
+#perfilUusario{
+    border-radius: 5px !important;
+}
+#perfilUusario{
+    background: white;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color:  white !important;
+    background-color: #D5D8DC  !important;
+}
+#perfilUusario a:hover{
+    color:#ea4647;
+}
+#perfilUusario a{
+    color:#808B96;
+}
+main a {
+    text-decoration: none!important;
+}
+.foto-perfil{
+    max-width: 25%;
+    height: auto;
+}
+#btnSubirImagen, #btnActualizar{
+    background: #EA4647;
+}
+#btnSubirImagen:hover{
+    background-color: #fff;
+    color: #ea4647;
+    text-decoration: none;
+    border: solid 1px #ea4647;
+}
+#btnActualizar:hover{
+    background-color: #fff;
+    color: #ea4647 !important;
+    text-decoration: none;
+    border: solid 1px #ea4647;
+}
+.btn-round{
+    color: white;
+    border-radius: 17px !important;
+}
+.fas{
+    color: #58D68D ;
+    margin: 0 auto;
+}
+/*mai*/
+
+
+/*footer*/
+footer {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+footer a{
+    color: #000;
+}
+
+footer a:hover{
+    color: #f46654;
+}
+/*footer*/

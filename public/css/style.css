@@ -1,0 +1,37 @@
+.tabla{
+    border-collapse: collapse;
+    border: 1px black solid;
+}
+.tabla thead{
+    display: block;
+}
+.tabla thead tr{
+    background: #B53471;
+    color: #fff;
+}
+.tabla thead th{
+    padding: 5px;
+}
+.tabla thead th, .tabla tbody td{
+    max-width: 150px;
+    min-width: 150px;
+    text-align: center;
+}
+.tabla tbody{
+    display: block;
+    height: 450px;
+    overflow: scroll;
+}
+.tabla tbody tr td{
+    padding: 5px;
+}
+.tabla tbody tr:nth-child(even){
+    background: rgba(181, 52, 113,0.2);
+}/*odd*/
+
+.error_input{
+    border : 2px solid red;
+}
+.ocultar{
+    display: none;
+}

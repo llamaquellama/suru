@@ -1,0 +1,73 @@
+.error {
+    border: 1px solid red !important;
+}
+#formRegistrarCategoria .colorErrorMsj{
+    color: red !important;
+}
+#navbarNav{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+}
+#logoSuru{
+    display: inline-block;
+    margin: 0 auto;
+}
+body #formRegistrarCategoria{
+    font-family: 'Montserrat', sans-serif;
+}
+main{
+    background: #cb2d3e;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #ef473a, #cb2d3e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #ef473a, #cb2d3e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 0 0 100px 0;
+
+}
+#txtareaDescripcion{
+    border-color: #D5D8DC;
+    border-radius: 5px !important;
+}
+#formRegistrarCategoria{
+    background: white;
+}
+#btnSubirImagen, #btnRegistrar{
+    background: #EA4647;
+}
+#btnSubirImagen:hover{
+    background-color: #fff;
+    color: #ea4647;
+    text-decoration: none;
+    border: solid 1px #ea4647;
+}
+#btnRegistrar:hover{
+    background-color: #fff;
+    color: #ea4647;
+    text-decoration: none;
+    border: solid 1px #ea4647;
+}
+.btn-round{
+    color: white;
+    border-radius: 17px !important;
+}
+#formRegistrarCategoria h4{
+    color: #566573 ;
+}
+#formRegistrarCategoria label{
+    color: #ABB2B9 !important; 
+    font-size: 13px;
+}
+footer {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+footer a{
+    color: #000;
+}
+
+footer a:hover{
+    color: #f46654;
+}
+
+.align-center {
+    margin: 0 auto;
+}

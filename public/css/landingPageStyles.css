@@ -1,0 +1,126 @@
+#navbarNav {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+}
+.jumbotron{
+    margin-bottom: 0px!important;
+}
+.jumbotron{
+    color: #fff;
+}
+.bg {
+    background-image: url("../img/fondo2.jpeg");
+
+    /* Full height */
+    height: 650px;
+    width: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.btnsuru {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ea4647;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 22px;
+    padding: 12px 20px;
+}
+
+.btnsuru:hover {
+    background-color: #fff;
+    color: #ea4647;
+    text-decoration: none;
+    border: solid 1px #ea4647;
+
+}
+.pjumbotron {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.h1jumbotron {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.far {
+    color:  #ea4647;
+    font-size: 15px;
+}
+
+.far:nth-child(2) {
+    padding-left: 15px;
+}
+
+.precio {
+    font-size: 14px;
+    color: #ea4647;
+}
+
+h3{
+    font-family: 'Montserrat', sans-serif !important;
+    font-style: italic;
+    font-weight: 600!important;
+}
+.bg2 {
+    background-image: url("../img/fondo.jpeg");
+
+    /* Full height */
+    height: 650px;
+    width: 100%;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card {
+    box-shadow: 1px 1px 10px #dddbdb;
+   
+
+}
+.bg3 {
+    background-image: url("../img/fondo3.jpg");
+
+    /* Full height */
+   height: 650px;
+    width: 100%;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.circulo {
+     border-radius: 50%!important;
+     background-color: chocolate;
+}
+
+.categorias {
+    font-family: 'Montserrat', sans-serif;
+
+}
+footer {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+footer a{
+    color: #000;
+}
+
+footer a:hover{
+    color: #f46654;
+}
+
+.lugares {
+    background-color: #f6f6f6;
+}

@@ -1,0 +1,95 @@
+body {
+  background: #cb2d3e;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #ef473a, #cb2d3e);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #ef473a, #cb2d3e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+font-family: 'Montserrat', sans-serif;
+font-size: 16px;
+}
+
+/* Clases de Bootstrap personalizadas */
+.card-header{
+  background-color: #fff;
+  border-bottom: 0;
+}
+.card{
+  border: 0;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 6px #888888;
+}
+.form-control{
+  border: 0;
+  border: 1px solid #cdced0;
+}
+.navbar .nav-item {
+  font-size: 1rem;
+  padding-right: 1rem;
+}
+.navbar-brand h3{
+   color: #fff;
+}
+@media (min-width: 1200px){
+.container {
+      max-width: 800px;
+}
+}
+.btn-danger{
+    background-color: #ea4647;
+    border-color: #ea4647;
+}
+.btn-lg {
+  border-radius: 3rem;
+}
+
+/* Fin clases de Bootstrap personalizadas */
+
+/* Fin estilos para el formulario */
+.align-center {
+  margin: 0 auto;
+}
+.foto-perfil{
+  max-width: 25%;
+  height: auto;
+}
+label{
+  text-transform: uppercase;
+  font-size: 0.7em;
+  color: #828285;
+  margin-bottom: .4rem;
+}
+.botonRedondo {
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  line-height: 1.33;
+  background-color: #ea4647;
+  display: block;
+  text-align: center;
+  margin-top: -50px;
+  position: relative;
+}
+.botonRedondo i{
+  color: #fff;
+  margin-top: 10px;
+}
+.alerta_error {
+  border: 2px solid #eb4d4b;
+}
+.msgError{
+  color: #ff0226 !important;
+  font-size: 0.7em;
+  text-transform: lowercase;
+  font-weight: bold;
+}
+/* Fin estilos para el formulario */
+footer {
+  font-family: 'Montserrat', sans-serif !important;
+  background-color: #fff!important;
+}
+
+footer a{
+  color: #000;
+}
+
+footer a:hover{
+  color: #f46654;
+}
