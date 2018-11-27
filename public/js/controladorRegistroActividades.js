@@ -2,6 +2,10 @@
 
 const botonRegistrar = document.querySelector('#btnRegistrar');
 
+const btnSubirFoto = document.querySelector('#btnSubirImagen');
+
+const foto = document.querySelector('#imagenPrevista');
+
 let inputNombre = document.querySelector('#txtNombre');
 let inputCategoria = document.querySelector('#slctCategoria');
 let inputFecha = document.querySelector('#txtFecha');
@@ -11,16 +15,26 @@ let inputCupos = document.querySelector('#txtCupos');
 let inputEtiquetas = document.querySelector('#txtEtiquetas');
 let inputPatrocinadores = document.querySelector('#slctPatrocinador');
 let inputDescripcion = document.querySelector('#txtDescripcion');
-let inputProvincia = document.querySelector('#slctProvincia');
-let inputDistrito = document.querySelector('#slctDistrito');
-let inputCanton = document.querySelector('#slctCanton');
+let inputProvincia = document.querySelector('#sltProvincias');
+let inputCanton = document.querySelector('#sltCantones');
+let inputDistrito = document.querySelector('#sltDistritos');
+let inputDireccion = document.querySelector('#txtDireccion');
+let inputUbicación = document.querySelector('#map');
 
-//let inputUbicación = document.querySelector('#slctUbicacion');
+btnSubirFoto.addEventListener('click', cargarIcono)
+
+function cargarIcono(event) {
+    event.returnValue = false;
+    pasarImagen();
+};
+
+//let inputUbicación = document.querySelector('#slctUbicacion');p
 
 botonRegistrar.addEventListener('click', obtenerDatos);
 
-function obtenerDatos() {
+function obtenerDatos(event) {
 
+    let fotoActividad = foto.src;
     let nombre = inputNombre.value;
     let categoria = inputCategoria.value;
     let fecha = new Date(inputFecha.value);
@@ -30,19 +44,15 @@ function obtenerDatos() {
     let etiquetas = inputEtiquetas.value;
     let patrocinadores = inputPatrocinadores.value;
     let descripcion = inputDescripcion.value;
-    let provincia = inputProvincia.value;
-    let distrito = inputDistrito.value;
-    let canton = inputCanton.value;
+    let nombreProvincia = inputProvincia.value;
+    let nombreCanton = inputCanton.value;
+    let nombreDistrito = inputDistrito.value;
+    let direccion = inputDireccion.value;
 
-    let respuesta = registrarActividad(nombre, categoria, fecha, hora, costo, cupos, etiquetas, patrocinadores, descripcion, provincia, distrito, canton);
+    
 
-    if (respuesta.success == true) {
-        alert('registrado');//aca sweet alert correcto
-    } else {
-        alert('no registrado');//aca swwet alert incorreto
-    }
-
-    let error = validar(nombre, categoria, fecha, hora, costo, cupos, etiquetas, patrocinadores, descripcion, provincia, distrito, canton);
+    let error = validar(nombre, categoria, fecha, hora, costo, cupos, etiquetas, patrocinadores, descripcion, nombreProvincia, nombreCanton, nombreDistrito, direccion);
+    event.returnValue = false;
 
     if (error == true) {
 
@@ -53,24 +63,40 @@ function obtenerDatos() {
         });
 
     } else {
-        swal({
-            type: 'success',
-            title: 'Su actividad ha sido registrada',
-            text: 'Felicidades'
-        });
+        let respuesta = registrarActividad(fotoActividad, nombre, categoria, fecha, hora, costo, cupos, etiquetas, patrocinadores, descripcion, nombreProvincia, nombreCanton, nombreDistrito, direccion);
+        if(respuesta.success){
+            swal({
+                type: 'success',
+                title: 'Su actividad ha sido registrada',
+                text: 'Felicidades'
+            });
+        }else{
+            swal({
+                type: 'error',
+                title: 'Registro incorrecto',
+            }); 
+        }
+        
     }
+
+    
+
+    // if (respuesta.success == true) {
+    //     alert('registrado');//aca sweet alert correcto
+    // } else {
+    //     alert('no registrado');//aca swwet alert incorreto
+    // }
 
 };
 
-function validar(pnombre, pcategoria, pfecha, phora, pcosto, pcupos, petiquetas, ppatrocinadores, pdescripcion, pprovincia, pdistrito, pcanton) {
+function validar(pnombre, pcategoria, pfecha, phora, pcosto, pcupos, petiquetas, ppatrocinadores, pdescripcion) {
 
     let error = false;
     let expNumeros = /^[0-9]$/;
     let expLetras = /^[a-zA-Z áéíóúñÜüÉÁ]+$/;
     let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
 
-
-    if (pnombre == '' || expLetras.test(pnombre) == false) {
+    if (pnombre == '') {
         error = true;
         inputNombre.classList.add('error_input');
     } else {
@@ -119,7 +145,7 @@ function validar(pnombre, pcategoria, pfecha, phora, pcosto, pcupos, petiquetas,
         inputEtiquetas.classList.remove('error_input');
     }
 
-    if (ppatrocinadores== '') {
+    if (ppatrocinadores == '') {
         error = true;
         inputPatrocinadores.classList.add('error_input');
     } else {
@@ -133,26 +159,26 @@ function validar(pnombre, pcategoria, pfecha, phora, pcosto, pcupos, petiquetas,
         inputDescripcion.classList.remove('error_input');
     }
 
-    if (pprovincia== '') {
-        error = true;
-        inputProvincia.classList.add('error_input');
-    } else {
-        inputProvincia.classList.remove('error_input');
-    }
+    // if (pprovincia== '') {
+    //     error = true;
+    //     inputProvincia.classList.add('error_input');
+    // } else {
+    //     inputProvincia.classList.remove('error_input');
+    // }
 
-    if (pdistrito== '') {
-        error = true;
-        inputDistrito.classList.add('error_input');
-    } else {
-        inputDistrito.classList.remove('error_input');
-    }
+    // if (pdistrito== '') {
+    //     error = true;
+    //     inputDistrito.classList.add('error_input');
+    // } else {
+    //     inputDistrito.classList.remove('error_input');
+    // }
 
-    if (pcanton== '') {
-        error = true;
-        inputCanton.classList.add('error_input');
-    } else {
-        inputCanton.classList.remove('error_input');
-    }
+    // if (pcanton== '') {
+    //     error = true;
+    //     inputCanton.classList.add('error_input');
+    // } else {
+    //     inputCanton.classList.remove('error_input');
+    // }
     
 
     return error;

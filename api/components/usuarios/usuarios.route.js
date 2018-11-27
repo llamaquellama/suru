@@ -28,3 +28,9 @@ router.route('/obtener_usuario/:nombreUsuario')
     .get(function (req, res) {
         usuarioApi.obtenerUsuario(req, res);
     });
+
+    router.route('/buscar_usuario')
+    .post(function (req, res) {
+        usuarioApi.buscar_usuario(req, res);
+
+    });

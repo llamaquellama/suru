@@ -2,7 +2,8 @@
 let mongoose = require('mongoose');
 
 let lugarSchema = new mongoose.Schema({
-
+    
+    foto: { type: String },
     nombre: { type: String, required: true, unique: true },
     categoria: { type: String, required: true },
     descripcion: { type: String, required: true },

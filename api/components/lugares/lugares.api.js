@@ -4,6 +4,7 @@ const lugarModel = require('./lugares.model');
 module.exports.registrar = function (req, res) {
 
     let nuevoLugar = new lugarModel({
+        foto: req.body.foto,
         nombre: req.body.nombre,
         categoria: req.body.categoria,
         descripcion: req.body.descripcion,

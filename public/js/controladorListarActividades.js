@@ -1,56 +1,86 @@
 ' use strict '
-const btnListarActividad = document.querySelector('#listarActividad');
-let btnVer;
-btnListarActividad.addEventListener('click', mostrarListaActvidades);
-let listarActividades = [];
+// const btnListarActividad = document.querySelector('#listarActividad');
+
+// btnListarActividad.addEventListener('click', mostrarListaActvidades);
+const inputFiltro =  document.querySelector('#txtFiltro');
+
+listaActividades = obtenerActividad();
+inputFiltro.addEventListener('keyup',mostrarListaActvidades);
 
 mostrarListaActvidades();
 
 function mostrarListaActvidades(){
-    listarActividades = obtenerListaActividades();
-    listarActividades=[{
-        "_id": "5bde45e984981978ed56a7d8",
-        "imagen": "",
-        "nombre": "casa de melo",
-        "descripcion": "Pikiniki en la casa de Melo",
-        "cupos": 3,
-        "costoss":0,
-        'comentarios':['muy bueno', 'muy malo'],
-        'evaluacion':3
-    },
-    {
-        "_id": "5bde45e984981978ed56a7d8",
-        "imagen": "",
-        "nombre": "casa de ange",
-        "descripcion": "Pikiniki en la casa de ange",
-        "cupos": 2,
-        "costoss":100,
-        'comentarios':['muy bueno', 'muy malo'],
-        'evaluacion':3
-    }];
+    
+
     let  tbody = document.querySelector('#tablaListarActividades tbody');
+    let filtro = inputFiltro.value;
     tbody.innerHTML = '';
-    for(let i = 0; i < listarActividades.length ; i++){
-        let fila = tbody.insertRow();
+    for(let i = 0; i < listaActividades.length ; i++){
+        if(listaActividades[i]['nombre'].toLowerCase().includes(filtro.toLowerCase())){
+            let fila = tbody.insertRow();
 
-        let celdaImagenActividad = fila.insertCell();
-        let celdaNombreActividad = fila.insertCell();
-        let celdaDescripcionaActividad = fila.insertCell();
-        let celdaCuposActividad = fila.insertCell();
-        let celdaCostoActividad = fila.insertCell();
-        let celdaBtn = fila.insertCell();
-        
-        celdaImagenActividad.innerHTML = listarActividades[i]['imagen'];
-        celdaNombreActividad.innerHTML = listarActividades[i]['nombre'];
-        celdaDescripcionaActividad.innerHTML = listarActividades[i]['descripcion'];
-        celdaCuposActividad.innerHTML = listarActividades[i]['cupos'];
-        celdaCostoActividad.innerHTML = listarActividades[i]['costoss'];
-        celdaBtn.innerHTML = '<i id="btn_ver_'+i+'" class="btn_ver far fa-eye"></i>';
+            let celdaImagenActividad = fila.insertCell();
+            let celdaNombreActividad = fila.insertCell();
+            let celdaDescripcionaActividad = fila.insertCell();
+            let celdaCuposActividad = fila.insertCell();
+            let celdaCostoActividad = fila.insertCell();
+            let botonVermas = fila.insertCell();
+            
+            
+    
+            celdaNombreActividad.innerHTML = listaActividades[i]['nombre'];
+            celdaDescripcionaActividad.innerHTML = listaActividades[i]['descripcion'];
+            celdaCuposActividad.innerHTML = listaActividades[i]['cupos'];
+            celdaCostoActividad.innerHTML = listaActividades[i]['costo'];
+            
+                   //puede ser mejor con un ancor
+            let boton = document.createElement('button');
+            boton.type = 'button';
+            boton.textContent = 'Ver más';
+            boton.dataset.id_actividad = listaActividades[i]['_id']
+            // celdaBtn.innerHTML = '<i id="exampleModalCenter'+i+'class="btn btn_ver far fa-eye" data-toggle="modal"></i>';
+            
+           
+            boton.addEventListener('click',visiaulizaActividad);
+            botonVermas.appendChild(boton);
+    
+            let  foto =  document.createElement('img');
+    
+            foto.classList.add('imagenTabla');
+            
+            if(listaActividades [i]['foto']){
+                foto.src = listaActividades[i]['foto'];
+            }else{
+                foto.src = 'img/iconoPatrocinador.png';
+            }
+    
+            celdaImagenActividad.appendChild(foto)
+    
+        }
     }
+       
 
-    btnVer = document.querySelectorAll('.btn_ver');
-    btnVer.forEach(function(btn) {
-        btn.addEventListener('click', tarjetaPerfilActividad());
-    });
+    // btnVer = document.querySelectorAll('.btn_ver');
+    // btnVer.forEach(function(btn) {
+    //     btn.addEventListener('click', tarjetaPerfilActividad);
+    // });
+
+   
 };
 
+function visiaulizaActividad(){
+
+    let id_actividad = this.dataset.id_actividad;
+    localStorage.setItem('idActividad',id_actividad);
+    window.location.href = 'perfilActividad.html';
+
+}
+
+// function tarjetaPerfilActividad(evento){
+//     let perfilActividad = obtenerActividad();
+
+//     let index = evento.target.id.split('_')[2];
+//     nombre.innerHTML = listarActividades[index]['nombre'];
+//     console.log('Nombre: ', listarActividades[index]['nombre']);
+//     nodo.innerHTML=listarActividades[index]['nombre'];
+// }

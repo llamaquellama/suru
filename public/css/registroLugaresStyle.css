@@ -1,10 +1,10 @@
 body {
-background: #f46b45;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to top, #f46b45,  #da3a47);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to top, #f46b45, #da3a47); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-font-family: 'Montserrat', sans-serif;
-font-size: 16px;
-}
+  background: #cb2d3e;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #ef473a, #cb2d3e);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #ef473a, #cb2d3e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    }
 
 /* Clases de Bootstrap personalizadas */
 .card-header{
@@ -26,6 +26,10 @@ font-size: 16px;
 }
 .navbar-brand h3{
    color: #fff;
+}
+#map {
+  height: 200px;
+  width: 100%;
 }
 @media (min-width: 1200px){
 .container {
@@ -68,6 +72,11 @@ label{
   color: #fff;
   margin-top: 10px;
 }
+.btn-round{
+  border-radius: 15px !important;
+  margin: auto;
+  width: 400px;
+}
 /* Fin estilos para el formulario */
 
 footer {
@@ -85,4 +94,11 @@ footer a:hover{
 
 .error_input {
   border: 2px solid #eb4d4b;
+}
+
+#btnSubirImagen:hover{
+  background-color: #fff;
+  color: #ea4647;
+  text-decoration: none;
+  border: solid 1px #ea4647;
 }

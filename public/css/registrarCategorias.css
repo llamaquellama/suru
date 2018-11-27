@@ -25,12 +25,14 @@ main{
 }
 #txtareaDescripcion{
     border-color: #D5D8DC;
-    border-radius: 5px !important;
 }
 #formRegistrarCategoria{
     background: white;
 }
-#btnSubirImagen, #btnRegistrar{
+#btnSubirImagen {
+    color: #000;
+}
+#btnRegistrar{
     background: #EA4647;
 }
 #btnSubirImagen:hover{
@@ -71,3 +73,6 @@ footer a:hover{
 .align-center {
     margin: 0 auto;
 }
+
+
+

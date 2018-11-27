@@ -56,6 +56,11 @@ body {
     cursor: pointer;
 
 }
+#txtFiltro{
+    background-color: #c7c5c5;
+    border: 1px solid #eae7e7;
+    width: 50%;
+}
 
 /*Estilos Boostrap personalizados*/
 .card{
@@ -78,6 +83,11 @@ body {
     border-bottom: 2px solid #efeeee;
     vertical-align: middle;
     text-align: center;
+}
+.disabled{
+
+        pointer-events: none;
+        cursor: default;
 }
 
 footer {

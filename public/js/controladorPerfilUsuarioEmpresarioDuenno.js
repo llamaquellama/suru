@@ -5,7 +5,6 @@ obtenerUsuario();
 function obtenerUsuario() {
     let usuario = obtenerPerfilUsuario();
 
-    //if(usuario.tipo == '1'){
     let inputNombreComercial = document.querySelector('#txtNombreComercial');
    
 
@@ -21,7 +20,7 @@ function obtenerUsuario() {
     
 
     let txtrazonSocial = document.querySelector('#txtrazonSocial');
-    txtrazonSocial.innerHTML = 'Razón social:' + " " + usuario.nombreUsuario;
+    txtrazonSocial.innerHTML = 'Razón social:' + " " + usuario.razonSocial;
 
     // let txtnombreComercial = document.querySelector('#txtNombreComercial');
     // txtnombreComercial.innerHTML = 'Nombre comercial:' + " " + usuario.nombreComercial;
@@ -32,8 +31,8 @@ function obtenerUsuario() {
     let txtcorreoEmpresarial = document.querySelector('#txtCorreoempresarial');
     txtcorreoEmpresarial.innerHTML = 'Correo empresarial:' + " " + usuario.correoEmpresa;
 
-    let txtcorreoEmpresarial = document.querySelector('#txtCedulaEmpresarial');
-    txtcorreoEmpresarial.innerHTML = 'Cédula jurídica:' + " " + usuario.id;
+    let txtcedulaEmpresarial = document.querySelector('#txtCedulaEmpresarial');
+    txtcedulaEmpresarial.innerHTML = 'Cédula jurídica:' + " " + usuario.id;
 
     
 /////

@@ -1,7 +1,9 @@
 'use strict';
+const inputFiltro = document.querySelector('#txtFiltro');
 
 let listaUsuarios = [];
 mostrarListaUsuarios();
+inputFiltro.addEventListener('keyup', mostrarListaUsuarios);
 
 function mostrarListaUsuarios() {
 
@@ -9,10 +11,14 @@ function mostrarListaUsuarios() {
 
     let tbody = document.querySelector('#tablaClientes tbody');
     tbody.innerHTML = '';
+    let filtro = inputFiltro.value;
 
-    for (let i = 0; i < listaUsuarios.length; i++) {
-            //if(listaUsuarios[i]['nombre1'].toLowerCase().includes(filtro.toLowerCase())){
-        let fila = tbody.insertRow();
+
+
+        for (let i = 0; i < listaUsuarios.length; i++) {
+            if(listaUsuarios[i]['nombre1'].toLowerCase().includes(filtro.toLowerCase()) || listaUsuarios[i]['apellido1'].toLowerCase().includes(filtro.toLowerCase())){
+
+                let fila = tbody.insertRow();
 
         let celdaId = fila.insertCell();
         let celdaNombreUsuario = fila.insertCell();
@@ -32,15 +38,18 @@ function mostrarListaUsuarios() {
         celdaCorreo.innerHTML = listaUsuarios[i]['correo'];
 
         //Icono visualizar
-        let enlaceVisualizar = document.createElement('a');
+        let enlaceVisualizar = document.createElement('button');
         enlaceVisualizar.classList.add('iconoRedondo');
         enlaceVisualizar.classList.add('rounded-circle');
         enlaceVisualizar.classList.add('far');
         enlaceVisualizar.classList.add('fa-address-book');
-        enlaceVisualizar.classList.add('visualizarModal');
-        enlaceVisualizar.id = 'btnVisualizar-'+i;
+        enlaceVisualizar.type = 'button';
+        enlaceVisualizar.dataset.id_usuario = listaUsuarios[i]['_id'];
 
-        celdaVisualizar.appendChild(enlaceVisualizar);
+        enlaceVisualizar.addEventListener('click', visualizarUsuario);
+
+        celdaVisualizar.appendChild(enlaceVisualizar); //Le agregamos el botón
+
 
 
         //Icono editar
@@ -80,30 +89,20 @@ function mostrarListaUsuarios() {
         enlaceEliminar.classList.add('fa-trash-alt');
 
         celdaEliminar.appendChild(enlaceEliminar);
+
+
+     
         }
+    }
         
-        let btnVisualizar = document.querySelectorAll('.visualizarModal');
-        btnVisualizar.forEach(function(btn){
-            btn.addEventListener('click', visualizarModal)
-        });
 
 };
 
-function visualizarModal(event){
-//    let boxModal = document.querySelector('#ventanaModalDiv');
-    let id = event.target.id.split('-');
+function visualizarUsuario(){
+    
+    let id_usuario = this.dataset.id_usuario; //This devuelve el botón, nos metemos al dataset y le pedimos el id
+    localStorage.setItem('usuario' , id_usuario) //crear una variable en la memoria
+    window.location.href = 'informacionUsuario.html';
 
-        //1. creación del card  
-//        let divLibro = document.createElement('div');
-//        divLibro.classList.add('modalStyle');
-//        boxModal.appendChild(divLibro);
 
-    let nombre = document.querySelector('#visualizarNombre');
-    nombre.innerText = listaUsuarios[id[1]]['nombre1']
-    let idText = document.querySelector('#visualizarId');
-    idText.innerText = listaUsuarios[id[1]]['id']
-
-    let apellido = document.querySelector('#visualizarApellido');
-    apellido.innerText = listaUsuarios[id[1]]['apellido1']
-
-}
+};

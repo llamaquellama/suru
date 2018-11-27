@@ -18,7 +18,7 @@
     <meta name="keywords" content="Suru">
     <meta name="author" content="Mantis">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/png" href="img/favIconSuru.png" />
+    <link rel="shortcut icon" type="image/png" href="./img/FavIconSuru.png"/>
     <title>Suru</title>
 </head>
 
@@ -27,7 +27,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
 
-                <a href="index.html" class="navbar-left">
+                <a href="perfilUsuarioCliente.html" class="navbar-left">
                     <img src="img/logo2.png" alt="logo Suru" width="75px">
                 </a>
                 <h3 class="d-inline align-middle">Suru</h3>
@@ -38,18 +38,17 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item mr-3">
-                            <a href="#" class="nav-link">
-                                Cuenta
+                            <a href="perfilUsuarioCliente.html" class="nav-link">
+                                Inicio
                             </a>
                         </li>
                         <li class="nav-item mr-3">
-                            <a href="#" class="nav-link">
-                                Bienvenido,
-                                <span style="color:#f99125;"> Leonardo</span>
+                            <a class="nav-link">
+                                <span style="color:#f99125;"> Bienvenido</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <button type="button" class="btn btn-danger btn-sm mt-1">
+                            <button id="btnCerrarSesion" type="button" class="btn btn-danger btn-sm mt-1">
                                 <i class="fas fa-sign-out-alt pr-1"></i>Cerrar sesión
                             </button>
                         </li>
@@ -178,7 +177,7 @@
                     <h6 class="text-uppercase font-weight-bold">Cuenta</h6>
                     <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                     <p>
-                        <a class="dark-grey-text" href="#!">Ayuda</a>
+                        <a class="dark-grey-text" >Ayuda</a>
                     </p>
 
                 </div>
@@ -188,13 +187,11 @@
                     <h6 class="text-uppercase font-weight-bold">Descubrir</h6>
                     <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                     <p>
-                        <a class="dark-grey-text" href="#!">Eventos</a>
+                        <a class="dark-grey-text" href="">Lugares</a>
                     </p>
+                  
                     <p>
-                        <a class="dark-grey-text" href="#!">Categorías</a>
-                    </p>
-                    <p>
-                        <a class="dark-grey-text" href="#!">Actividades</a>
+                        <a class="dark-grey-text" >Actividades</a>
                     </p>
 
                 </div>
@@ -222,7 +219,7 @@
 
 
     </footer>
-
+    <script src="./js/controladorNav.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"

@@ -24,7 +24,6 @@ function mostrarListaLugares() {
        //let celdaUbicacion = fila.insertCell();
        let celdaBtnVer = fila.insertCell();
        let celdaBtnEditar = fila.insertCell();
-       let celdaBtnDeshabilitar = fila.insertCell();
        let celdaBtnEliminar = fila.insertCell();
        
         celdaNombre.innerHTML = listaLugares[i]['nombre'];
@@ -40,7 +39,6 @@ function mostrarListaLugares() {
         //celdaUbicacion.innerHTML = listaLugares[i]['ubicacion'];
         celdaBtnVer.innerHTML = '<i id="btn_ver_'+i+'" class="btn_ver btn_ver far fa-eye"></i>';
         celdaBtnEditar.innerHTML = '<i id="btn_ver_'+i+'" class="btn_ver fas fa-edit"></i>';
-        celdaBtnDeshabilitar.innerHTML = '<i id="btn_ver_'+i+'" class="btn_ver fas fa-user-slash"></i>';
         celdaBtnEliminar.innerHTML = '<i id="btn_ver_'+i+'" class="btn_ver fas fa-trash-alt"></i>';
     }
 };

@@ -11,14 +11,14 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="css/registroUsuariosStyle.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600" rel="stylesheet">
-    <link rel="shortcut icon" type="image/png" href="img/favIconSuru.png" />
+    <link rel="shortcut icon" type="image/png" href="./img/FavIconSuru.png"/>
     <title>Suru | Registro Usuarios</title>
 </head>
 
 <body id="home">
     <nav class="navbar navbar-expand-md navbar-light pb-2" id="main-nav">
         <div class="container">
-            <a href="index.html" class="navbar-brand align-center py-2">
+            <a href="perfilUsuarioAdministrador.html" class="navbar-brand align-center py-2">
                 <img src="img/logo2.png" width="75" height="75" alt="logo image">
                 <br>
                 <h3 class="align-middle text-center">Suru</h3>
@@ -37,19 +37,22 @@
 
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" id="tab-clientes" data-toggle="tab" href="#formclientes" role="tab" aria-controls="clientes" aria-selected="true">Clientes</a>
+                            <a class="nav-link active" id="tab-clientes" data-toggle="tab" href="#formclientes" role="tab"
+                                aria-controls="clientes" aria-selected="true">Clientes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="tab-empresario" data-toggle="tab" href="#formEmpresario" role="tab" aria-controls="empresarios" aria-selected="false">Empresario</a>
+                            <a class="nav-link" id="tab-empresario" data-toggle="tab" href="#formEmpresario" role="tab"
+                                aria-controls="empresarios" aria-selected="false">Empresario</a>
                         </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active formularioCliente" id="formclientes" role="tabpanel" aria-labelledby="tab-clientes">
+                        <div class="tab-pane fade show active formularioCliente" id="formclientes" role="tabpanel"
+                            aria-labelledby="tab-clientes">
                             <form id="formularioCliente">
                                 <div class="form-row">
                                     <div class="col">
-                                        <img src="img/avatar.jpg" alt="" class="img-fluid rounded-circle my-4 d-block align-center foto-perfil">
-                                        <a href="" class="rounded-circle botonRedondo align-center">
+                                        <img id="imagenPrevista" src="img/avatar.jpg" alt="" class="img-fluid rounded-circle my-4 d-block align-center foto-perfil">
+                                        <a id="btnSubirImagen" class="rounded-circle botonRedondo align-center">
                                             <i class="fas fa-camera"></i>
                                         </a>
 
@@ -79,14 +82,14 @@
                                         <div class="form-row">
                                             <label for="txtnombreUsuario">Nombre de usuario</label>
                                             <input id="txtnombreUsuario" type="text" class="form-control form-control-sm">
-                                            <label id="errorNombre1" class="msgError"></label>
+                                            <label id="msgErrorNombreUsuario" class="msgError"></label>
                                         </div>
                                     </div>
                                     <div class="col-md-6 form-group pl-md-4">
                                         <div class="form-row">
                                             <label for="txtEmail">Correo</label>
                                             <input id="txtEmail" type="email" class="form-control form-control-sm">
-                                            <label id="errorEmail" class="msgError"></label>
+                                            <label id="msgErrorCorreo" class="msgError"></label>
                                         </div>
                                     </div>
 
@@ -99,6 +102,7 @@
                                         <div class="form-row">
                                             <label for="txtNombre1">Primer Nombre</label>
                                             <input id="txtNombre1" type="text" class="form-control form-control-sm">
+                                            <label id="msgErrorNombre" class="msgError"></label>
                                         </div>
                                     </div>
                                     <div class="col-md-6 form-group pl-md-4">
@@ -116,6 +120,7 @@
                                         <div class="form-row">
                                             <label for="txtApellido1">Primer Apellido</label>
                                             <input id="txtApellido1" type="text" class="form-control form-control-sm">
+                                            <label id="msgErrorApellido1" class="msgError"></label>
                                         </div>
                                     </div>
                                     <div class="col-md-6 form-group pl-md-4">
@@ -133,12 +138,15 @@
                                         <div class="form-row">
                                             <label for="txtNacimiento">Fecha nacimiento</label>
                                             <input id="txtNacimiento" type="date" class="form-control form-control-sm">
+                                            <label id="msgErrorFecha" class="msgError"></label>
                                         </div>
                                     </div>
                                     <div class="col-md-6 form-group pl-md-4">
                                         <div class="form-row">
                                             <label for="txtEdad">Edad</label>
-                                            <input disabled id="txtEdad" type="number" class="form-control form-control-sm">
+                                            <input disabled id="txtEdad" type="number" class="form-control form-control-sm"
+                                                min="15">
+                                            <label id="msgErrorEdad" class="msgError"></label>
                                         </div>
                                     </div>
 
@@ -151,13 +159,14 @@
                                         <div class="form-row">
                                             <label for="txtContrasenna">Contraseña</label>
                                             <input id="txtContrasenna" type="password" class="form-control form-control-sm">
+                                            <label id="msgErrorContrasena" class="msgError"></label>
                                         </div>
                                     </div>
                                     <div class="col-md-6 form-group pl-md-4">
                                         <div class="form-row">
                                             <label for="txtConfirmarContrasenna">Confirmar Contraseña</label>
                                             <input id="txtConfirmarContrasenna" type="password" class="form-control form-control-sm">
-                                            <label id="msgErrorContrasennaConfirm"></label>
+                                            <label id="msgErrorConfirmacion" class="msgError"></label>
                                         </div>
                                     </div>
 
@@ -178,7 +187,7 @@
                                 <div class="form-row">
                                     <div class="col">
                                         <img src="img/avatar2.jpg" alt="" class="img-fluid rounded-circle my-4 d-block align-center foto-perfil">
-                                        <a href="" class="rounded-circle botonRedondo align-center">
+                                        <a class="rounded-circle botonRedondo align-center">
                                             <i class="fas fa-camera"></i>
                                         </a>
                                     </div>
@@ -204,6 +213,7 @@
                                         <div class="form-row">
                                             <label for="txtNombreComercial">Nombre Comercial</label>
                                             <input id="txtNombreComercial" type="text" class="form-control form-control-sm">
+                                            <label id="msgErrorNombreComercial" class="msgError"></label>
                                         </div>
                                     </div>
                                     <div class="col-md-6 form-group pl-md-4">
@@ -218,6 +228,7 @@
                                         <div class="form-row">
                                             <label for="txtCorreoEmpresa">Correo Empresarial</label>
                                             <input id="txtCorreoEmpresa" type="email" class="form-control form-control-sm">
+                                            <label id="msgErrorCorreoEmpresa" class="msgError"></label>
                                         </div>
                                     </div>
                                 </div>
@@ -244,6 +255,7 @@
                                         </select>
                                     </div>
                                 </div>
+
                                 <div class="form-row py-3">
                                     <h6>CONTACTO DE LA EMPRESA</h6>
                                 </div>
@@ -267,6 +279,7 @@
                                         <div class="form-row">
                                             <label for="txtApellidoAContacto">Primer Apellido</label>
                                             <input id="txtApellidoAContacto" type="text" class="form-control form-control-sm">
+                                            <label id="msgErrorApellidoAContacto" class="msgError"></label>
                                         </div>
                                     </div>
                                     <div class="col-md-6 form-group pl-md-4">
@@ -281,6 +294,7 @@
                                         <div class="form-row">
                                             <label for="txtCorreoContacto">Correo</label>
                                             <input id="txtCorreoContacto" type="email" class="form-control form-control-sm">
+                                            <label id="msgErrorCorreoEmpresario" class="msgError"></label>
                                         </div>
                                     </div>
                                     <div class="col-md-6 form-group pl-md-4">
@@ -296,12 +310,14 @@
                                         <div class="form-row">
                                             <label for="contrasennaEmpresario">Contraseña</label>
                                             <input id="contrasennaEmpresario" type="password" class="form-control form-control-sm">
+                                            <label id="msgErrorContrasenaEmpresario" class="msgError"></label>
                                         </div>
                                     </div>
                                     <div class="col-md-6 form-group pl-md-4">
                                         <div class="form-row">
                                             <label for="confirmarContrasennaEmpresario">Confirmar Contraseña</label>
                                             <input id="confirmarContrasennaEmpresario" type="password" class="form-control form-control-sm">
+                                            <label id="msgErrorConfirmacionEmpresario" class="msgError"></label>
                                         </div>
                                     </div>
 
@@ -366,13 +382,13 @@
                     <h6 class="text-uppercase font-weight-bold">Descubrir</h6>
                     <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                     <p>
-                        <a class="dark-grey-text" href="#!">Eventos</a>
+                        <a class="dark-grey-text" href="listarLugares.html">Lugares</a>
                     </p>
                     <p>
-                        <a class="dark-grey-text" href="#!">Categorías</a>
+                        <a class="dark-grey-text" href="listarCategorias.html">Categorías</a>
                     </p>
                     <p>
-                        <a class="dark-grey-text" href="#!">Actividades</a>
+                        <a class="dark-grey-text" href="listarActividades.html">Actividades</a>
                     </p>
 
                 </div>
@@ -412,8 +428,15 @@
     <script src="js/jquery-3.3.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
     <script src="js/servicioRegistroUsuario.js"></script>
+    <script src="js/servicioDireccion.js"></script>
+    <script src="js/controladorDireccion.js"></script>
     <script src="js/controladorRegistroUsuarios.js"></script>
     <script src="js/controladorRegistroEmpresario.js"></script>
+
+    <!-- Scripts cloudinary -->
+    <script src="js/servicioImagen.js"></script>
+    <script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
+    <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
 
 </body>
 

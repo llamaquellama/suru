@@ -7,6 +7,7 @@ const icono = document.querySelector('#imagenPrevista');
 const nombre = document.querySelector('#txtNombreCategoria');
 const descripcion = document.querySelector('#txtareaDescripcion');
 const errorNombre = document.querySelector('#errorNombre');
+const errorDescripcion = document.querySelector('#errorDescripcion');
 
 btnRegistrar.addEventListener('click', obtenerDatoscategoria);
 btnIconoCategoria.addEventListener('click', cargarIcono);
@@ -53,14 +54,18 @@ function obtenerDatoscategoria(event) {
                 text: respuesta.msj,
                 confirmButtonText: 'Entendido'
             });
+            icono.src = '';
+            nombre.value = '';
+            descripcion.value = '';
         }
         //mostrarListaCategorias();
     }
+    
 };
 
 function validar(iconoSrc, nombreText, descripcionText) {
     let error = false;
-    let regexNombre = /^[a-zA-ZÁÉÍÓÚáéíóúÄËÜÖüñÑ]+$/;
+    let regexNombre = /^[a-zA-ZÁÉÍÓÚáéíóúÄËÜÖüñÑ ]+$/;
     if (iconoSrc == '') {
         error = true;
         icono.classList.add('error');
@@ -71,7 +76,7 @@ function validar(iconoSrc, nombreText, descripcionText) {
     if (nombreText == '') {
         error = true;
         nombre.classList.add('error');
-        errorNombre.innerText = 'El nombre no puede estar vacío'
+        errorNombre.innerText = 'El nombre no puede estar vacío.'
     } else if (!regexNombre.test(nombreText)) {
         errorNombre.innerText = 'El nombre incluye caracteres no válidos.'
         error = true;
@@ -83,8 +88,10 @@ function validar(iconoSrc, nombreText, descripcionText) {
     if (descripcionText == '') {
         error = true;
         descripcion.classList.add('error');
+        errorDescripcion.innerText = 'La descripción no puede estar vacía'
     } else {
         descripcion.classList.remove('error');
+        errorDescripcion.innerText = '';
     }
 
 

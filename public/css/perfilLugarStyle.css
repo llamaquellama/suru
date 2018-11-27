@@ -22,3 +22,16 @@ footer a:hover{
     margin-right: auto;
     width: 80%;
   }
+
+label{
+    color: #828285;
+    margin-bottom: .4rem;
+}
+
+.align-center {
+    margin: 0 auto;
+  }
+  .foto-perfil{
+    max-width: 25%;
+    height: auto;
+  }

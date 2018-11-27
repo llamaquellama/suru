@@ -10,8 +10,7 @@ router.route('/registrarCategoria')
 
 router.route('/listarCategorias')
     .get(function (req, res) {
-        const categoriasApi = require('./categorias.api');
-        categoriasApi.listarTodasCategorias(req, res);
+        categoriasApi.listarCategorias(req, res);
     });
 
 module.exports = router;

@@ -20,7 +20,7 @@ const categoriasModel = require('./categorias.model');
     });
 
  };
- module.exports.listarTodasCategorias = function(req , res){
+ module.exports.listarCategorias = function(req , res){
     categoriasModel.find().then(
         function(categorias){
             res.send(categorias);

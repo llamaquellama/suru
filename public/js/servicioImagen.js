@@ -8,8 +8,6 @@ $(function () {
     // Upload button event
     uploadButton.on('click', function (e) {
 
-
-
     });
 })
 

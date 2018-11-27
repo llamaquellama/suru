@@ -12,12 +12,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
 
-
+    <link rel="import" href="navMenu.html">
     <meta name="description" content="Suru: la red social para encontrar lugares y visitarlos. Conocer actividades y eventos en Costa Rica.">
     <meta name="keywords" content="Suru">
     <meta name="author" content="Mantis">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/png" href="img/favIconSuru.png"/>
+    <link rel="shortcut icon" type="image/png" href="./img/FavIconSuru.png"/>
     <title>Suru | Home</title>
 </head>
 
@@ -35,10 +35,10 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="inicio_sesion.html">INICIAR SESION</a>
+                            <a class="nav-link" href="inicioSesion.html">INICIAR SESIÓN</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="registroUsuarios.html">REGISTRARSE</a>
+                            <a class="nav-link" href="registroVisitantes.html">REGISTRARSE</a>
                         </li>
                     </ul>
                 </div>
@@ -54,7 +54,7 @@
                 <h1 class="text-center pt-5 mt-5 h1jumbotron">¿Ya sabés que hacer hoy?</h1>
                 <p class="text-center pb-2 pjumbotron">Descubrilo con Suru </p>
                 <p class="lead text-center">
-                    <a class="button btnsuru" href="#" role="button">Registrarse</a>
+                    <a class="button btnsuru" href="registroVisitantes.html" role="button">Registrarse</a>
                 </p>
             </div>
         </div>
@@ -72,7 +72,7 @@
                         <h5 class="card-title">Holi One: Concierto con Calvin Harris</h5>
                         <h6 class="precio"><strong>c30.000</strong></h6>
                         <p class="card-text">Concierto de música electrónica. Incluye 3 polvos Holi de colores. </p>
-                        <p class="text-center pt-3"><a class="button btnsuru" href="#" role="button">Reservar</a></p>
+                        <p class="text-center pt-3"><a class="button btnsuru" href="#" role="button" id="bt1">Reservar</a></p>
                     </div>
                 </div>
                 <div class="card">
@@ -85,7 +85,7 @@
                         <h6 class="precio"><strong>c10.000</strong></h6>
                         <p class="card-text"> Preparación de Helados Artesanales desde cero con la reconocida Chef
                             Amelie.</p>
-                        <p class="text-center pt-3"><a class="button btnsuru" href="#" role="button">Reservar</a></p>
+                        <p class="text-center pt-3"><a class="button btnsuru" href="#" role="button" id="bt2">Reservar</a></p>
                     </div>
                 </div>
                 <div class="card">
@@ -97,18 +97,15 @@
                         <h5 class="card-title">Caminata en Cerro La Carpintera</h5>
                         <h6 class="precio"><strong>GRATIS</strong></h6>
                         <p class="card-text">Caminata con guía profesional por senderos del Cerro La Carpintera </p>
-                        <p class="text-center pt-3"><a class="button btnsuru" href="#" role="button">Reservar</a></p>
+                        <p class="text-center pt-3"><a class="button btnsuru" href="#" role="button" id="bt3">Reservar</a></p>
                     </div>
                 </div>
             </div>
         </div>
-
     </section>
-    
     <section>
         <div class="jumbotron jumbotron-fluid bg2">
     </section>
-
 
     <section class="lugares py-5">
         <h3 class="text-center pb-3">Lugares</h3>
@@ -129,7 +126,7 @@
                                 <i class="far fa-star"></i>
                             </strong></h6>
                         <p class="card-text">Maravilloso hotel ubicado en medio de la selva tropical. </p>
-                        <p class="text-center pt-3"><a class="button btnsuru" href="#" role="button">Ver Lugar</a></p>
+                        <p class="text-center pt-3"><a class="button btnsuru" href="#" role="button" id="bt4">Ver Lugar</a></p>
                     </div>
                 </div>
                 <div class="card">
@@ -146,7 +143,7 @@
                                 <i class="far fa-star"></i>
                             </strong></h6>
                         <p class="card-text"> Academia de baile especializada en Ballet y baile contemporáneo.</p>
-                        <p class="text-center pt-3"><a class="button btnsuru" href="#" role="button">Ver Lugar</a></p>
+                        <p class="text-center pt-3"><a class="button btnsuru" href="#" role="button" id="bt5">Ver Lugar</a></p>
                     </div>
                 </div>
                 <div class="card">
@@ -164,7 +161,7 @@
                             </strong></h6>
                         <p class="card-text">Hotel único con sistema todo incluído, especializados en comida tropical.
                         </p>
-                        <p class="text-center pt-3"><a class="button btnsuru" href="#" role="button">Ver Lugar</a></p>
+                        <p class="text-center pt-3"><a class="button btnsuru" href="#" role="button" id="bt6">Ver Lugar</a></p>
                     </div>
                 </div>
             </div>
@@ -194,10 +191,10 @@
                     <h6 class="text-uppercase font-weight-bold">Cuenta</h6>
                     <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                     <p>
-                        <a class="dark-grey-text" href="#!">Iniciar Sesión</a>
+                        <a class="dark-grey-text" href="inicioSesion.html">Iniciar Sesión</a>
                     </p>
                     <p>
-                        <a class="dark-grey-text" href="#!">Registrarse</a>
+                        <a class="dark-grey-text" href="registroVisitantes.html">Registrarse</a>
                     </p>
                     <p>
                         <a class="dark-grey-text" href="#!">Ayuda</a>
@@ -210,13 +207,13 @@
                     <h6 class="text-uppercase font-weight-bold">Descubrir</h6>
                     <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                     <p>
-                        <a class="dark-grey-text" href="#!">Eventos</a>
+                        <a class="dark-grey-text" href="listarLugares.html">Lugares</a>
                     </p>
                     <p>
-                        <a class="dark-grey-text" href="#!">Categorías</a>
+                        <a class="dark-grey-text" href="listarCategorias.html">Categorías</a>
                     </p>
                     <p>
-                        <a class="dark-grey-text" href="#!">Actividades</a>
+                        <a class="dark-grey-text" href="listarActividades.html">Actividades</a>
                     </p>
 
                 </div>
@@ -244,7 +241,9 @@
 
 
     </footer>
-
+    <script src="./js/controladorNav.js"></script>
+    <script src="./js/controladorIndex.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"

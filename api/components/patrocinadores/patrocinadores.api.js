@@ -6,7 +6,7 @@ module.exports.registrarPatrocinador = function(req, res){
     let nuevoPatrocinador = new patrocinadorModel({
         fotoPatrocinador:  req.body.fotoPatrocinador,
         tipoIndustria: req.body.tipoIndustria,
-        nombrePatrocinador: req.body.tipoIndustria
+        nombrePatrocinador: req.body.nombrePatrocinador
 
     });
 

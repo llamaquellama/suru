@@ -1,18 +1,33 @@
-/*general*/
-h5{
-    color: #2e3e48;
+
+#navbarNav{
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 500;
+    font-size: 13px;
 }
-body a, span{
-    display: inline-block;
+body {
+    font-family: 'Montserrat', sans-serif !important;
 }
-/*general*/
-/*header*/
-header nav{
-    background: #F17D24;
+main{
+    background: #cb2d3e;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #ef473a, #cb2d3e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #ef473a, #cb2d3e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 0 0 100px 0;
 }
-/*header*/
-/*footer*/
-#derechos{
-    background: #F17D24;
+#mainPerfilAct label{
+    color: #566573 ;
 }
-/*footer*/
+#mainPerfilAct a{
+    color: #ABB2B9;
+    font-size: 15px;
+}
+footer {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+footer a{
+    color: #000;
+}
+
+footer a:hover{
+    color: #f46654;
+}

@@ -1,6 +1,6 @@
 'use strict';
 //agregar pUbicacion cuando funcione// 
-function registrarActividad (pNombre, pCategoria, pFecha, pHora, pCosto, pCupos, pEtiquetas, pPatrocinadores, pDescripcion, pProvincia, pDistrito, pCanton){
+function registrarActividad (pfoto,pNombre, pCategoria, pFecha, pHora, pCosto, pCupos, pEtiquetas, pPatrocinadores, pDescripcion, pnombreProvincia, pnombreCanton, pnombreDistrito, pDireccion, pUbicacion){
     let respuesta = '';
     let peticion = $.ajax({
         url: 'http://localhost:4000/api/registrarActividad',
@@ -9,7 +9,7 @@ function registrarActividad (pNombre, pCategoria, pFecha, pHora, pCosto, pCupos,
         dataType : 'json',
         async:false,
         data:{
-          //foto: pfoto,
+            foto: pfoto,
             nombre: pNombre,
             categoria: pCategoria,
             fecha: pFecha,
@@ -19,10 +19,11 @@ function registrarActividad (pNombre, pCategoria, pFecha, pHora, pCosto, pCupos,
             etiquetas: pEtiquetas,
             patrocinadores: pPatrocinadores,
             descripcion: pDescripcion,
-            provincia: pProvincia,
-            distrito: pDistrito,
-            canton: pCanton
-            //ubicacion: pUbicacion,
+            nombreProvincia : pnombreProvincia,
+            nombreCanton : pnombreCanton,
+            nombreDistrito : pnombreDistrito,
+            direccion: pDireccion,
+            ubicacion: pUbicacion
         }
       });
     

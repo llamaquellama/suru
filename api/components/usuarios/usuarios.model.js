@@ -4,7 +4,7 @@ let mongoose = require('mongoose');
 let usuarioSchema = new mongoose.Schema({
     rolUsuario : {type : String, required : false},
     tipoId : {type : String, unique : false, required : false},
-    id : {type : String, unique : true, required : false},
+    id : {type : String, unique : true, required : true},
     nombreUsuario : {type : String, unique : true, required : true},
     nombre1 : {type : String, required : false},
     nombre2 : {type : String, required : false},
@@ -13,8 +13,9 @@ let usuarioSchema = new mongoose.Schema({
     correo : {type : String, required : false},
     fechaNacimiento : {type : String, required : false},
     edad : {type : Number, required : false},
-    contrasenna : {type : String, required : false},
+    contrasenna : {type : String, required : true},
     confirmarContrasenna : {type : String, required : false},
+    imgPerfil : {type : String, required : false},
 
 
     /**empresario */
@@ -31,8 +32,9 @@ let usuarioSchema = new mongoose.Schema({
     apellidoBContacto : {type : String, required : false},
     correoContacto : {type : String, required : false},
     telContacto : {type : String, required : false},
-    contrasennaEmpresario : {type : String, required : false},
-    confirmarContrasennaEmpresario : {type : String, required : false},
+    nombreProvincia : {type : String, required : false},
+    nombreCanton : {type : String, required : false},
+    nombreDistrito : {type : String, required : false}
 
 });
 
