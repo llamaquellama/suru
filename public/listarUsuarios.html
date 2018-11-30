@@ -11,6 +11,7 @@
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,600" rel="stylesheet">
     <link rel="stylesheet" href="css/listarUsuariosStyle.css">
+    <link rel="shortcut icon" type="image/png" href="./img/FavIconSuru.png"/>
     <title>Suru | Listar Usuarios</title>
 </head>
 
@@ -19,7 +20,7 @@
 
     <nav class="navbar  navbar-expand-lg navbar-light color-fondo p-0">
         <div class="container">
-            <a href="index.html" class="navbar-brand">
+            <a href="perfilUsuarioAdministrador.html" class="navbar-brand">
                 <img src="img/logo2.png" width="60" height="60" alt="logo image">
             </a>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -28,31 +29,28 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav pl-md-5">
                     <li class="nav-item px-2">
-                        <a href="#" class="nav-link active">Inicio</a>
+                        <a href="perfilUsuarioAdministrador.html" class="nav-link active">Inicio</a>
                     </li>
                     <li class="nav-item px-2">
-                        <a href="#" class="nav-link">Clientes</a>
+                        <a href="listarUsuarios.html" class="nav-link">Clientes</a>
                     </li>
                     <li class="nav-item px-2">
-                        <a href="#" class="nav-link">Empresarios</a>
+                        <a href="listarEmpresarios.html" class="nav-link">Empresarios</a>
                     </li>
                     <li class="nav-item px-2">
-                        <a href="#" class="nav-link">Lugares</a>
-                    </li>
-                    <li class="nav-item px-2">
-                        <a href="#" class="nav-link">Actividades</a>
+                        <a href="registroUsuarios.html" class="nav-link">Registrar Usuario</a>
                     </li>
                 </ul>
 
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item mr-3">
-                        <a href="#" class="nav-link">
+                        <a class="nav-link">
                             Bienvenido,
                             <span style="color:#f99125;"> administrador.</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <button type="button" class="btn btn-danger btn-sm mt-1">
+                        <button id="btnCerrarSesion" type="button" class="btn btn-danger btn-sm mt-1">
                             <i class="fas fa-sign-out-alt pr-1"></i>Cerrar sesión
                         </button>
                     </li>
@@ -68,16 +66,16 @@
                 <div class="col-md-12 ml-auto">
                     <ul class="nav submenu">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Clientes activos</a>
+                            <a class="nav-link" href="listarUsuarios.html">Clientes activos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Clientes Deshabilitados</a>
+                            <a class="nav-link disabled" href="#">Clientes Deshabilitados</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Clientes baneados</a>
+                            <a class="nav-link disabled" href="#">Clientes baneados</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Clientes Eliminados</a>
+                            <a class="nav-link disabled" href="#">Clientes Eliminados</a>
                         </li>
                     </ul>
 
@@ -96,6 +94,7 @@
                             <h4>Clientes Activos</h4>
                         </div>
                         <div class="table-responsive">
+                                <input type="text" id="txtFiltro" class="form-control my-2" placeholder="Buscar Cliente">
                             <table id="tablaClientes" class="table table-bordered table-hover">
                                 <thead class="contenido-tabla">
                                     <tr>
@@ -165,13 +164,13 @@
                     <h6 class="text-uppercase font-weight-bold">Descubrir</h6>
                     <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                     <p>
-                        <a class="dark-grey-text" href="#!">Eventos</a>
+                        <a class="dark-grey-text" href="listarLugares.html">Lugares</a>
                     </p>
                     <p>
-                        <a class="dark-grey-text" href="#!">Categorías</a>
+                        <a class="dark-grey-text" href="listarCategorias.html">Categorías</a>
                     </p>
                     <p>
-                        <a class="dark-grey-text" href="#!">Actividades</a>
+                        <a class="dark-grey-text" href="listarActividades.html">Actividades</a>
                     </p>
 
                 </div>
@@ -204,6 +203,7 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
+    <script src="./js/controladorNav.js"></script>
     <script src="js/servicioListarUsuarios.js"></script>
     <script src="js/controladorListarUsuarios.js"></script>
 

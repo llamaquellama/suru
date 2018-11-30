@@ -1,8 +1,8 @@
 'use strict ';
 function obtenerPerfilActividad(){
-    let verPerfilActividad = [];
+    let verPerfilActividad = {};
     let peticion = $.ajax({
-        url:'http://localhost:4000/api/ver_perfil_actividad',
+        url:'http://localhost:4000/api/ver_perfil_actividad/'+localStorage.getItem('idActividad'),
         type: 'get',
         contentType: 'aapplication/x-www-form-urlencoded; charset=utf-8',
         dataType: 'json',

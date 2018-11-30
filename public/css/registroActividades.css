@@ -5,6 +5,10 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     }
+    #map {
+      height: 200px;
+      width: 100%;
+    }
     
     /* Clases de Bootstrap personalizadas */
     .card-header{
@@ -67,6 +71,12 @@ body {
       margin-top: -50px;
       position: relative;
     }
+
+    .btn-round{
+      border-radius: 15px !important;
+      margin: auto;
+      width: 400px;
+  }
     .botonRedondo i{
       color: #fff;
       margin-top: 10px;
@@ -88,3 +98,10 @@ body {
     footer a:hover{
         color: #f46654;
     }
+
+    #btnSubirImagen:hover{
+      background-color: #fff;
+      color: #ea4647;
+      text-decoration: none;
+      border: solid 1px #ea4647;
+  }

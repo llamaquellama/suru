@@ -2,35 +2,57 @@
 
 const botonRegistrar = document.querySelector('#btnRegistrar');
 
+const btnSubirFoto = document.querySelector('#btnSubirImagen');
+const foto = document.querySelector('#imagenPrevista');
+
 let inputNombre = document.querySelector('#txtNombre');
 let inputCategoria = document.querySelector('#slctCategoria');
 let inputDescripcion = document.querySelector('#txtDescripcion');
 let inputFacebook = document.querySelector('#txtFacebook');
 let inputTwitter = document.querySelector('#txtTwitter');
 let inputInstagram = document.querySelector('#txtInstagram');
-let inputGoogle = document.querySelector('#txtGoogle');
-let inputProvincia = document.querySelector('#slctProvincia');
-let inputDistrito = document.querySelector('#slctDistrito');
-let inputCanton = document.querySelector('#slctCanton');
+let inputYoutube = document.querySelector('#txtYoutube');
+let inputDireccion = document.querySelector('#txtDireccion');
+
+
+btnSubirFoto.addEventListener('click', cargarIcono)
+
+function cargarIcono(event) {
+    event.returnValue = false;
+    pasarImagen();
+};
 
 //let inputUbicación = document.querySelector('#slctUbicacion');
 
 botonRegistrar.addEventListener('click', obtenerDatos);
 
 function obtenerDatos(){
-
+    let fotoActividad = foto.src;
     let nombre = inputNombre.value;
     let categoria = inputCategoria.value;
     let descripcion = inputDescripcion.value;
     let facebook = inputFacebook.value;
     let twitter = inputTwitter.value;
     let instagram = inputInstagram.value;
-    let google = inputGoogle.value;
-    let provincia = inputProvincia.value;
-    let distrito = inputDistrito.value;
-    let canton = inputCanton.value;
+    let youtube = inputYoutube.value;
+    let direccion = inputDireccion.value;
+    let nombreProvincia = provincias.filter(provincia => provincia.idProvincia === parseInt(selectProvincias.value))[0].nombre;
 
-    let respuesta = registrarLugar (nombre,categoria, descripcion, facebook, twitter, instagram, google, provincia, distrito, canton);
+    let nombreCanton = cantones.filter(canton => canton.idCanton === parseInt(selectCantones.value))[0].nombre;
+
+    let nombreDistrito = distritos.filter(distrito => distrito.idDistrito === parseInt(selectDistritos.value))[0].nombre;
+
+    var latitudLongitud = marker.getPosition().lat() + ',' + marker.getPosition().lng();
+
+    // let nombreCanton = selectCantones.value;
+    // console.log(cantones);
+
+    // let nombreDistrito = selectDistritos.value;
+    // console.log(distritos);
+
+   // let ubicacion = inputUbicación.innerHTML;
+
+    let respuesta = registrarLugar (fotoActividad, nombre, categoria, descripcion, facebook, twitter, instagram, youtube, nombreProvincia, nombreCanton, nombreDistrito, direccion, latitudLongitud);
 
     if(respuesta.success == true){
         alert('registrado');
@@ -38,7 +60,7 @@ function obtenerDatos(){
         alert('no registrado');
     }
 
-    let error = validar(nombre,categoria, descripcion, facebook, twitter, instagram, google, provincia, distrito, canton);
+    let error = validar(nombre,categoria, descripcion, facebook, twitter, instagram, youtube, direccion);
 
     if (error == true) {
 
@@ -59,7 +81,7 @@ function obtenerDatos(){
 };
 
 
-function validar(pnombre, pcategoria, pdescripcion, pfacebook, ptwitter, pinstagram, pgoogle, pprovincia, pdistrito, pcanton) {
+function validar(pnombre, pcategoria, pdescripcion, pdireccion) {
 
     let error = false;
     let expNumeros = /^[0-9]$/;
@@ -88,53 +110,11 @@ function validar(pnombre, pcategoria, pdescripcion, pfacebook, ptwitter, pinstag
         inputDescripcion.classList.remove('error_input');
     }
 
-    if (pfacebook == '') {
+    if (pdireccion == '') {
         error = true;
-        inputFacebook.classList.add('error_input');
+        inputDireccion.classList.add('error_input');
     } else {
-        inputFacebook.classList.remove('error_input');
-    }
-
-    if (ptwitter == '') {
-        error = true;
-        inputTwitter.classList.add('error_input');
-    } else {
-        inputTwitter.classList.remove('error_input');
-    }
-
-    if (pinstagram == '') {
-        error = true;
-        inputInstagram.classList.add('error_input');
-    } else {
-        inputInstagram.classList.remove('error_input');
-    }
-
-    if (pgoogle == '') {
-        error = true;
-        inputGoogle.classList.add('error_input');
-    } else {
-        inputGoogle.classList.remove('error_input');
-    }
-
-    if (pprovincia== '') {
-        error = true;
-        inputProvincia.classList.add('error_input');
-    } else {
-        inputProvincia.classList.remove('error_input');
-    }
-
-    if (pdistrito== '') {
-        error = true;
-        inputDistrito.classList.add('error_input');
-    } else {
-        inputDistrito.classList.remove('error_input');
-    }
-
-    if (pcanton== '') {
-        error = true;
-        inputCanton.classList.add('error_input');
-    } else {
-        inputCanton.classList.remove('error_input');
+        inputDireccion.classList.remove('error_input');
     }
     
 

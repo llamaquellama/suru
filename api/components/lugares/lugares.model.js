@@ -2,18 +2,20 @@
 let mongoose = require('mongoose');
 
 let lugarSchema = new mongoose.Schema({
-
+    
+    foto: { type: String },
     nombre: { type: String, required: true, unique: true },
     categoria: { type: String, required: true },
     descripcion: { type: String, required: true },
     facebook: { type: String },
     twitter: { type: String },
     instagram: { type: String },
-    google: { type: String },
-    provincia: { type: String, required: true },
-    distrito: { type: String, required: true },
-    canton: { type: String, required: true },
-    //ubicacion: {type : String, required : true},
+    youtube: { type: String },
+    nombreProvincia: { type: String },
+    nombreCanton: { type: String },
+    nombreDistrito: { type: String },
+    direccion: {type : String },
+    latitudLongitud: {type : String }
 
 });
 

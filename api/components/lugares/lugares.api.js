@@ -4,16 +4,19 @@ const lugarModel = require('./lugares.model');
 module.exports.registrar = function (req, res) {
 
     let nuevoLugar = new lugarModel({
+        foto: req.body.foto,
         nombre: req.body.nombre,
         categoria: req.body.categoria,
         descripcion: req.body.descripcion,
         facebook: req.body.facebook,
         twitter: req.body.twitter,
         instagram: req.body.instagram,
-        google: req.body.google,
-        provincia: req.body.provincia,
-        distrito: req.body.distrito,
-        canton: req.body.canton,
+        youtube: req.body.google,
+        nombreProvincia: req.body.nombreProvincia,
+        nombreCanton: req.body.nombreCanton,
+        nombreDistrito: req.body.nombreDistrito,
+        direccion: req.body.direccion,
+        latitudLongitud: req.body.latitudLongitud
 
     });
 

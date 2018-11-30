@@ -1,6 +1,6 @@
 'use strict';
 
-function registrarUsuario(prolUsuario, ptipoID, pid, pnombreUsuario, pnombre1, pnombre2, papellido1, papellido2, pcorreo, pfechaNacimiento, pedad, pcontrasenna, pconfirmarContrasenna) {
+function registrarUsuario(prolUsuario, ptipoID, pid, pnombreUsuario, pnombre1, pnombre2, papellido1, papellido2, pcorreo, pfechaNacimiento, pedad, pcontrasenna, pconfirmarContrasenna, pimgPerfil) {
   let respuesta = '';
   let peticion = $.ajax({
     url: 'http://localhost:4000/api/registrarUsuario',
@@ -21,7 +21,8 @@ function registrarUsuario(prolUsuario, ptipoID, pid, pnombreUsuario, pnombre1, p
       fechaNacimiento: pfechaNacimiento,
       edad: pedad,
       contrasenna: pcontrasenna,
-      confirmarContrasenna: pconfirmarContrasenna
+      confirmarContrasenna: pconfirmarContrasenna,
+      imgPerfil: pimgPerfil
     }
   });
 
@@ -37,7 +38,7 @@ function registrarUsuario(prolUsuario, ptipoID, pid, pnombreUsuario, pnombre1, p
 };
 
 
-function registrarEmpresario(prolUsuario, pIDJuridico, prazonSocial, pnombreComercial, ptelEmpresa, pcorreoEmpresa, pnombreAContacto, pnombreBContacto, papellidoAContacto, papellidoBContacto, pcorreoContacto, ptelContacto, pcontrasennaEmpresario, pconfirmarContrasennaEmpresario, pnombreUsuario) {
+function registrarEmpresario(prolUsuario, pIDJuridico, prazonSocial, pnombreComercial, ptelEmpresa, pcorreoEmpresa, pnombreAContacto, pnombreBContacto, papellidoAContacto, papellidoBContacto, pcorreoContacto, ptelContacto, pcontrasennaEmpresario, pconfirmarContrasennaEmpresario, pnombreUsuario, pnombreProvincia, pnombreCanton, pnombreDistrito) {
   let respuesta = '';
   let peticion = $.ajax({
     url: 'http://localhost:4000/api/registrarUsuario',
@@ -58,9 +59,13 @@ function registrarEmpresario(prolUsuario, pIDJuridico, prazonSocial, pnombreCome
       apellidoBContacto: papellidoBContacto,
       correoContacto: pcorreoContacto,
       telContacto: ptelContacto,
-      contrasennaEmpresario: pcontrasennaEmpresario,
-      confirmarContrasennaEmpresario: pconfirmarContrasennaEmpresario,
-      nombreUsuario: pnombreUsuario
+      contrasenna: pcontrasennaEmpresario,
+      confirmarContrasenna: pconfirmarContrasennaEmpresario,
+      nombreUsuario: pnombreUsuario,
+      nombreProvincia : pnombreProvincia,
+      nombreCanton : pnombreCanton,
+      nombreDistrito : pnombreDistrito
+
     }
   });
 

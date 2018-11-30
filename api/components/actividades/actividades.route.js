@@ -10,7 +10,12 @@ router.route('/registrarActividad')
 
 router.route('/listarActividades')
     .get(function (req, res) {
-        actividadesApi.listarTodos(req, res);
+        actividadesApi.obtenerActividad(req, res);
     });
 
+    router.route('/ver_perfil_actividad/:id')
+    .get(function (req, res) {
+        actividadesApi.obtenerPerfilActividad(req, res);
+    });
+    
 module.exports = router;

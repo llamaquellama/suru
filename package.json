@@ -15,8 +15,18 @@
     "express": "^4.16.4",
     "mongoose": "^5.3.8",
     "morgan": "^1.9.1",
+    "nodemailer": "^4.7.0",
     "nodemon": "^1.18.5",
     "path": "^0.12.7",
     "serve-static": "^1.13.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/llamaquellama/suru.git"
+  },
+  "bugs": {
+    "url": "https://github.com/llamaquellama/suru/issues"
+  },
+  "homepage": "https://github.com/llamaquellama/suru#readme"
 }

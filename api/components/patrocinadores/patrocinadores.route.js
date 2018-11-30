@@ -12,5 +12,7 @@ router.route('/listarPatrocinadores')
     .get(function(req, res){
         patrocinadoresApi.obtenerPatrocinador(req, res);
     });
+
+    
     
 module.exports = router;

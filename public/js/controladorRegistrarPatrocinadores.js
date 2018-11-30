@@ -129,7 +129,8 @@ function validar(imagenSrc, industriaText, nombreText){
         nombre.classList.add('error');
     } else {
         errorNombre.innerText = '';
-        nombre.classList.remove('error');
+        nombre.classList.remove('error'); 
+        errorNombre.innerText = '';
     }
     
 

@@ -30,7 +30,7 @@ main{
 #formRegistrarPatrocinador{
     background: white;
 }
-#btnSubirImagen, #btnRegistrar{
+#btnRegistrar{
     background: #EA4647;
 }
 #btnSubirImagen:hover{
@@ -48,6 +48,9 @@ main{
 .btn-round{
     color: white;
     border-radius: 17px !important;
+}
+#btnSubirImagen {
+    color: #000;
 }
 #formRegistrarPatrocinador h4{
     color: #566573 ;

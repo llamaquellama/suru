@@ -1,6 +1,6 @@
 'use strict';
 //agregar pUbicacion cuando funcione// 
-function registrarLugar (pNombre, pCategoria, pDescripcion, pFacebook, pTwitter, pInstagram, pGoogle, pProvincia, pDistrito, pCanton){
+function registrarLugar (pfoto, pNombre, pCategoria, pDescripcion, pFacebook, pTwitter, pInstagram, pYoutube, pnombreProvincia, pnombreCanton, pnombreDistrito, pDireccion, platitudLongitud){
     let respuesta = '';
     let peticion = $.ajax({
         url: 'http://localhost:4000/api/registrarLugar',
@@ -9,17 +9,19 @@ function registrarLugar (pNombre, pCategoria, pDescripcion, pFacebook, pTwitter,
         dataType : 'json',
         async:false,
         data:{
+            foto: pfoto,
             nombre: pNombre,
             categoria: pCategoria,
             descripcion: pDescripcion,
             facebook: pFacebook,
             twitter: pTwitter,
             instagram: pInstagram,
-            google: pGoogle,
-            provincia: pProvincia,
-            distrito: pDistrito,
-            canton: pCanton,
-            //ubicacion: pUbicacion,
+            youtube: pYoutube,
+            nombreProvincia : pnombreProvincia,
+            nombreCanton : pnombreCanton,
+            nombreDistrito : pnombreDistrito,
+            direccion: pDireccion,
+            latitudLongitud: platitudLongitud
         }
       });
     

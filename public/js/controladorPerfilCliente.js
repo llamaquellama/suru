@@ -31,7 +31,7 @@ function obtenerUsuario() {
     txtcedula.innerHTML = 'Cédula:' + " " + usuario.id;
 
     let txtFechaNac = document.querySelector('#txtFechaNac');
-    txtFechaNac.innerHTML = 'Fecha nacimiento:' + " " + usuario.fechaNacimiento;
+    txtFechaNac.innerHTML = 'Fecha nacimiento:' + " " + usuario.fechaNacimiento.getDay()+'-'+usuario.fechaNacimiento.getMonth()+'-'+usuario.fechaNacimiento.getYear();
 
     let txtEdad = document.querySelector('#txtEdad');
     txtEdad.innerHTML = 'Edad:' + " " + usuario.edad;

@@ -1,28 +1,103 @@
-/*general*/
-h5{
-    color: #2e3e48;
+
+main{
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 16px;
+    background: #cccaca;
 }
-body a, span{
+.nav-item a{
+    font-size: 0.9em;
+}
+.submenu li a{
+    text-transform: uppercase;
+    font-size: 0.8em;
+    color: #b7b7b7;
+}
+.submenu li a:hover{
+    text-transform: uppercase;
+    font-size: 0.8em;
+    color: #ea4647;
+}
+.color-fondo{
+    background-color: #fff;
+}
+.color-header{
+    background: #eeeeef;
+}
+/* Terminan estilos de los Navs */
+
+.footer-fijo{
+    position: absolute;
+    width: 100%;
+    height: 100%
+}
+.contenido-tabla {
+    color: #fff;
+    background: #b3b2b2;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+.card {
+    border-radius: 0.5rem;
+    border: 0;
+    background: none;
+}
+.card-header {
+    background: none;
+    border: none;}
+/* Iconos para mantenimiento usuarios*/
+
+.iconoRedondo {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    line-height: 1.33;
+    background-color: #ea4647;
     display: inline-block;
+    text-align: center;
+    position: relative;
+    margin: 3px 0;
+
+  }
+  .iconoRedondo i{
+    color: #fff;
+    margin-top: 6px;
+    font-size: 0.9em;
 }
-/*general*/
-/*listarActividades*/
-tbody{
-    background: white;
+/*Estilos Boostrap personalizados*/
+
+#tablaListarActividades td, .table thead th {
+    border: 0;
+    font-weight: 400;
+    font-size: 0.8em;
 }
-thead{
-    background: #04d693;
+#tablaListarActividades td, #tablaListarActividades th{
+    border-bottom: 2px solid #efeeee;
+    vertical-align: middle;
+    text-align: center;
+}
+/**/
+footer {
+    font-family: 'Montserrat', sans-serif !important;
 }
 
-tr.border th:first-child{
-    border-top-left-radius: 10px;
+footer a{
+    color: #000;
 }
-tr.border th:last-child{
-    border-top-right-radius: 10px;
+
+footer a:hover{
+    color: #f46654;
 }
-table {
-    border-collapse: collapse;
-    border-radius: 1em;
-    overflow: hidden;
+.imagenTabla{
+    height: 70px;
+    widows: 25%;
 }
-/*listarActividades*/
+
+.align-center {
+    margin: 0 auto;
+}
+
+
+.imagenTabla{
+    height: 70px;
+    widows: 25%;
+}

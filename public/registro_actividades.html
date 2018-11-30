@@ -10,14 +10,15 @@
         crossorigin="anonymous">
 <link rel="stylesheet" href="css/registroActividades.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600" rel="stylesheet">
-<link rel="shortcut icon" type="image/png" href="img/favIconSuru.png"/>
+<link rel="stylesheet" href="/maps/documentation/javascript/cgc/demos.css">
+<link rel="shortcut icon" type="image/png" href="./img/FavIconSuru.png"/>
 <title>Suru | Registro Actividades</title>
 </head>
 
 <body id="home">
 <nav class="navbar navbar-expand-md navbar-light pb-2" id="main-nav">
   <div class="container">
-     <a href="index.html" class="navbar-brand align-center py-5">
+     <a href="perfilUsuarioEmpresarioDuenno.html" class="navbar-brand align-center py-5">
         <img src="img/logo2.png" width="75" height="75" alt="logo image">
     <br><h3 class="align-center text-center">Suru</h3>
     </a> </div>
@@ -32,10 +33,22 @@
         <form id="formularioEmpresario">
           <div class="form-row">
             <div class="col-md-12 form-group"> 
-              <img src="img/actividad3.png" alt="" class="img-fluid my-4 d-block align-center foto-actividad"> 
+
+                <div class="">
+                    <figure class="imagenHolder col-md-8 offset-md-2 offset-sm-2">
+                        <img src="img/actividad3.png" alt="selecionar imagen" id="imagenPrevista" class="img-fluid my-4 d-block align-center">
+                    </figure>
+                    <div class="mb-5">
+                        <button class="btn btn-block btn-round text-uppercase" id="btnSubirImagen"><i class="fas fa-camera"></i><br>Subir banner</button>
+                    </div>
+                </div>
+
+             <!-- <img src="img/actividad3.png" alt="" class="img-fluid my-4 d-block align-center foto-actividad"> 
               <a href="" class="rounded-circle botonRedondo align-center"> 
                 <i class="fas fa-camera"></i> 
-              </a> </div>
+              </a> --> 
+            
+            </div>
           </div>
           
           <div class="form-row">
@@ -50,8 +63,13 @@
                 <label for="slctCategoria">Categoría</label>
                 <select id="slctCategoria" class="form-control form-control-sm">
                   <option value="">(Seleccione)</option>
-                  <option>Cat1</option>
-                  <option>Cat2</option>
+                  <option>Belleza</option>
+                  <option>Fotografía</option>
+                  <option>Hotel</option>
+                   <option>Deporte</option>
+                   <option>Alimento</option>
+                   <option>Aventura</option>
+                   <option>Educación</option>
                 </select>
               </div>
             </div>
@@ -66,7 +84,7 @@
             <div class="col-md-6 form-group pl-md-4">
               <div class="form-row">
                 <label for="txtHora">Hora</label>
-                <input id="txtHora" type="text" class="form-control form-control-sm">
+                <input id="txtHora" type="time" class="form-control form-control-sm">
               </div>
             </div>
           </div>
@@ -74,7 +92,7 @@
             <div class="col-md-6 form-group pr-md-4">
               <div class="form-row">
                 <label for="txtCosto">Costo</label>
-                <input id="txtCosto" type="text" class="form-control form-control-sm">
+                <input id="txtCosto" type="number" class="form-control form-control-sm" min="0" max="100000000">
               </div>
             </div>
             <div class="col-md-6 form-group pl-md-4">
@@ -96,8 +114,10 @@
                   <label for="slctPatrocinador">Patrocinadores</label>
                   <select id="slctPatrocinador" class="form-control form-control-sm">
                     <option value="">(Seleccione)</option>
-                    <option>Patrocinador 1</option>
-                    <option>Patrocinador 2</option>
+                    <option>McDonalds</option>
+                    <option>Volskwagen</option>
+                    <option>Kolbi</option>
+                    <option>Adidas</option>
                   </select>
                 </div>
               </div>
@@ -110,59 +130,45 @@
               </div>
             </div>
           </div>
+          
           <div class="form-row">
-            <div class="col-md-3 form-group pr-md-2">
-              <label for="slctProvincia">DIRECCION</label>
+            <div class="col-md-4 form-group pr-md-2">
+                <label for="sltProvincias">Provincia</label>
+                <select name="" id="sltProvincias" class="form-control form-control-sm">
+                    <option value="">Seleccione</option>
+                </select>
             </div>
-            <div class="col-md-3 form-group pr-md-2">
-              <label for="slctProvincia">Provincia</label>
-              <select id="slctProvincia" class="form-control form-control-sm">
-                <option value="">(Seleccione)</option>
-                <option>San Jose</option>
-                <option>Heredia</option>
-                <option>Alajuela</option>
-                <option>Cartago</option>
-                <option>Guanacaste</option>
-                <option>Limón</option>
-                <option>Puntarenas</option>
-              </select>
+            <div class="col-md-4 form-group pr-md-2">
+                <label for="sltCantones">Cantón</label>
+                <select name="" id="sltCantones" class="form-control form-control-sm">
+                    <option value="">Seleccione</option>
+                </select>
             </div>
-            <div class="col-md-3 form-group pr-md-2">
-              <label for="slctDistrito">Distrito</label>
-              <select id="slctDistrito" class="form-control form-control-sm">
-                <option value="">(Seleccione)</option>
-                <option>San Jose</option>
-                <option>Heredia</option>
-                <option>Alajuela</option>
-                <option>Cartago</option>
-                <option>Guanacaste</option>
-                <option>Limón</option>
-                <option>Puntarenas</option>
-              </select>
+            <div class="col-md-4 form-group pr-md-2">
+                <label for="sltDistritos">Distrito</label>
+                <select name="" id="sltDistritos" class="form-control form-control-sm">
+                    <option value="">Seleccione</option>
+                </select>
             </div>
-            <div class="col-md-3 form-group pr-md-2">
-              <label for="slctCanton">Canton</label>
-              <select id="slctCanton" class="form-control form-control-sm">
-                <option value="">(Seleccione)</option>
-                <option>San Jose</option>
-                <option>Heredia</option>
-                <option>Alajuela</option>
-                <option>Cartago</option>
-                <option>Guanacaste</option>
-                <option>Limón</option>
-                <option>Puntarenas</option>
-              </select>
-            </div>
+        </div>
+
+          <div class="form-row">
+
+              <div class="col-md-12 form-group">
+                  <label for="txtDescripcion">Dirección específica</label>
+                  <textarea class="form-control" id="txtDireccion" rows="3"></textarea>
+              </div>
           </div>
         
 
           <div class="form-row">
-              <div class="col-md-12 form-group pr-md-2">
-                  <label for="slctUbicacion">Ubicación</label>
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3930.0231301816475!2d-84.0509619495519!3d9.932031492862937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2scr!4v1541731544799" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
-
+              <div class="col-12 pb-4 px-0">
+                  <label for="txtDescripcion">Seleccione la ubicación en el mapa</label>
+                  <div id="map"></div>
               </div>
           </div>
+
+
           <div class="form-row">
             <div class="col text-center"> <a id="btnRegistrar" class="btn btn-danger btn-lg text-white">Registrar</a> </div>
           </div>
@@ -207,13 +213,10 @@
                 <h6 class="text-uppercase font-weight-bold">Descubrir</h6>
                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                 <p>
-                    <a class="dark-grey-text" href="#!">Eventos</a>
+                    <a class="dark-grey-text" href="listarLugares.html">Lugares</a>
                 </p>
                 <p>
                     <a class="dark-grey-text" href="#!">Categorías</a>
-                </p>
-                <p>
-                    <a class="dark-grey-text" href="#!">Actividades</a>
                 </p>
 
             </div>
@@ -241,15 +244,32 @@
 
 
 </footer>
+ <!-- Scripts mapa -->
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_PJfUOGeqihhQT-ZS5cx0t7vDlF9xIbo&callback=initMap"
+ async defer></script>
+ <script src="./js/mapa.js"></script>
+ <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_PJfUOGeqihhQT-ZS5cx0t7vDlF9xIbo&callback=initMap"
+     type="text/javascript"></script>
 
-<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script> 
+<script src="js/jquery-3.3.1.js"></script>
+<!----<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script> 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script> 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script> 
 <script src="js/servicioRegistroActividad.js"></script>
+<script src="js/servicioDireccion.js"></script>
+<script src="js/controladorDireccion.js"></script>
 <script src="js/controladorRegistroActividades.js"></script> 
+
+ <!-- Script provincia canton distrito -->
+ 
+ 
+ <!-- Scripts cloudinary -->
+ <script src="js/servicioImagen.js"></script>
+ <script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
+ <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
 </body>
 </html>

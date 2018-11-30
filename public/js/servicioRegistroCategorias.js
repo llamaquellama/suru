@@ -25,7 +25,7 @@ function registrarCategoria(iconoCategoria, nombreCategoria, descripcionCategori
      return respuesta; 
 };
 
-function obtenerCategorias(){
+function listarCategorias(){
     let listarCategorias = [];
     let  peticion = $.ajax({
         url: 'http://localhost:4000/api/listarCategorias',

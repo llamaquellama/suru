@@ -1,11 +1,6 @@
 let botonRegistrar = document.querySelector('#btnRegistrar');
-let elementosInput = document.querySelectorAll('.formularioCliente input[type=text]:required, .formularioCliente input[type=password]:required, .formularioCliente input[type=date]:required, .formularioCliente input[type=email]:required, .formularioCliente input[type=number]:required, .formularioCliente select:required');
+const btnSubirFotoPerfil =  document.querySelector('#btnSubirImagen');
 
-/**.formulaCliente es la clase que encierra todos los input que queremos evaluar, por lo tanto podemos referirnos a los input
- * formularioCliente de la siguiente manera .formularioCliente input[type=text]  especificando el tipo
- * de igual manera los select pero como estos no tienen tipo se omiten los corchetes cuadrados
-* basicamente la el llamado seria asi: .clase input[tipo de input]
- */
 
 let inputTipoID = document.querySelector('#slctTipoID');
 let inputId = document.querySelector('#txtID');
@@ -19,8 +14,18 @@ let inputNacimiento = document.querySelector('#txtNacimiento');
 let inputEdad = document.querySelector('#txtEdad');
 let inputContrasenna = document.querySelector('#txtContrasenna');
 let inputConfirmarContrasenna = document.querySelector('#txtConfirmarContrasenna');
-let msgErrorNombre = document.querySelector('#errorNombre1');
-let msgErrorContrasennaConfirm = document.querySelector('#msgErrorContrasennaConfirm');
+const foto =  document.querySelector('#imagenPrevista');
+
+//Subir foto perfil
+
+btnSubirFotoPerfil.addEventListener('click', cargarImagen);
+
+function cargarImagen(event) {
+    event.returnValue = false;
+    pasarImagen();
+};
+
+
 
 function obtenerDatos() {
     const rolUsuario = '1';
@@ -36,119 +41,161 @@ function obtenerDatos() {
     let edad = Number(inputEdad.value);
     let contrasenna = inputContrasenna.value;
     let confirmarContrasenna = inputConfirmarContrasenna.value;
+    let imgPerfil = foto.src;
 
-    let error = false;
-    let errorEspacio = validarEspaciosVacios(elementosInput);
-    if (errorEspacio == true) {
+    let error = validar(rolUsuario, tipoID, id, nombreUsuario, nombre1, nombre2, apellido1, apellido2, correo, fechaNacimiento, edad, contrasenna, confirmarContrasenna);
+
+
+    if (error == true) {
         swal({
             type: 'warning',
             title: 'No se pudo registrar los datos',
-            text: 'Hay espacios vacios en el formulario'
+            text: 'Por favor revise los campos en rojo'
         });
-        error = true;
 
+    } else {
+        let respuesta = registrarUsuario(rolUsuario, tipoID, id, nombreUsuario, nombre1, nombre2, apellido1, apellido2, correo, fechaNacimiento, edad, contrasenna, confirmarContrasenna, imgPerfil);
+        if (respuesta.success)
+            swal({
+                type: 'success',
+                title: 'Registrado',
+                text: 'Se han enviado los datos'
+            });
+        else
+            swal({
+                type: 'warning',
+                title: 'No se pudo registrar los datos',
+                text: respuesta.msg
+            });
     }
 
-    let errorNombres = validarNombres(nombre1, inputNombre1);
-    if (errorNombres == true) {
-        error = true;
-    }
-    errorNombres = validarNombres(apellido1, inputApellido1);
-    if (errorNombres == true) {
-        error = true;
-    }
-
-    let correoCorrecto = validarCorreo(correo);
-    if (correoCorrecto == true) {
-        error = true;
-
-    }
     let contrasenaIgual = igualdadContrasenas(contrasenna, confirmarContrasenna);
+
     if (!contrasenaIgual) {
-        msgErrorContrasennaConfirm.innerText="Contraseñas no son iguales.";
         error = true;
-    }
-    else{
-        msgErrorContrasennaConfirm.innerText="";
-    }
-    if (error) {
-        swal({
-            type: 'warning',
-            title: 'No se pudo registrar los datos',
-            text: 'Hay espacios vacios en el formulario'
-        });
+        inputConfirmarContrasenna.classList.add('alerta_error');
+        msgErrorConfirmacion.innerText = "Las contraseñas no coinciden";
     } else {
-        registrarUsuario(rolUsuario, tipoID, id, nombreUsuario, nombre1, nombre2, apellido1, apellido2, correo, fechaNacimiento, edad, contrasenna, confirmarContrasenna);
-        swal({
-            type: 'success',
-            title: 'Registrado',
-            text: 'Se han enviado los datos'
-        });
+        inputConfirmarContrasenna.classList.remove('alerta_error');
+        msgErrorConfirmacion.innerText = '';
     }
-}
 
-
-/** 
- *    
-*/
-
-
-function validarEspaciosVacios(pElementosInput) {
-
-    let bCampoVacio = false;
-
-    for (var i = 0; i < pElementosInput.length; i++) {
-        if (pElementosInput[i].value == '') {
-            pElementosInput[i].classList.add('alerta_error');
-            pElementosInput[i].focus();
-            bCampoVacio = true;
-        } else {
-            pElementosInput[i].classList.remove('alerta_error');
-        }
-    }
-    return bCampoVacio;
 };
 
-function validarNombres(valor, elemento) {
-    let errorNombres = false;
+
+function validar(prolUsuario, ptipoID, pid, pnombreUsuario, pnombre1, pnombre2, papellido1, papellido2, pcorreo, pfechaNacimiento, pedad, pcontrasenna ){
+    let error = false;
     let expLetras = /^[a-z A-Záéíóúñ@]+$/;
+    let expCorreo = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+    let exprContrasenna =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#])([A-Za-z\d$@$!%*?&#]|[^ ]){8,15}$/;
 
 
-    if (expLetras.test(valor) == false) {
-        errorNombres = true;
-        elemento.classList.add('alerta_error');
+    if (ptipoID == ''){
+        error = true;
+        inputTipoID.classList.add('alerta_error');
     } else {
-        elemento.classList.remove('alerta_error');
+        inputTipoID.classList.remove('alerta_error');
     }
 
-    return errorNombres;
-};
+    if (pid == ''){
+        error = true;
+        inputId.classList.add('alerta_error');
+    } else {
+        inputId.classList.remove('alerta_error');
+    }
 
-function validarCorreo(pcorreo) {
-    let errorCorreo = false;
-    let expCorreo = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (pnombreUsuario == '') {
+        error = true;
+        inputNombreUsuario.classList.add('alerta_error');
+        msgErrorNombreUsuario.innerText = "El nombre de usuario no puede estar vacio";
+    } else {
+        inputNombreUsuario.classList.remove('alerta_error');
+        msgErrorNombreUsuario.innerText = '';
+    }
 
-    if (expCorreo.test(inputCorreo.value) == false) {
-        errorCorreo = true;
+
+    if (pnombre1 == '') {
+        error = true;
+        inputNombre1.classList.add('alerta_error');
+        msgErrorNombre.innerText = "El nombre no puede estar vacio";
+    } else if (expLetras.test(pnombre1) == false) {
+        error = true;
+        inputNombre1.classList.add('alerta_error');
+        msgErrorNombre.innerText = "El nombre tiene caracteres no válidos";
+    } else {
+        inputNombre1.classList.remove('alerta_error');
+        msgErrorNombre.innerText = '';
+    }
+
+
+    if (papellido1 == '' || expLetras.test(papellido1) == false){
+        error = true;
+        inputApellido1.classList.add('alerta_error');
+    } else {
+        inputApellido1.classList.remove('alerta_error');
+    }
+
+    if (papellido1 == '') {
+        error = true;
+        inputApellido1.classList.add('alerta_error');
+        msgErrorApellido1.innerText = "El apellido no puede estar vacio";
+    } else if (expLetras.test(papellido1) == false) {
+        error = true;
+        inputApellido1.classList.add('alerta_error');
+        msgErrorApellido1.innerText = "El apellido tiene caracteres no válidos";
+    } else {
+        inputApellido1.classList.remove('alerta_error');
+        msgErrorApellido1.innerText = '';
+    }
+
+    if (pcorreo == '') {
+        error = true;
         inputCorreo.classList.add('alerta_error');
+        msgErrorCorreo.innerText = "El correo no puede estar vacio";
+    } else if (expCorreo.test(inputCorreo.value) == false) {
+        error = true;
+        inputCorreo.classList.add('alerta_error');
+        msgErrorCorreo.innerText = "Formato de correo inválido";
     } else {
         inputCorreo.classList.remove('alerta_error');
+        msgErrorCorreo.innerText = '';
     }
-    return errorCorreo;
-}
 
-function validarFecha(pfechaNacimiento) {
-    let errorFecha = false;
-
-    if (pfechaNacimiento == 'Invalid Date' || pfechaNacimiento > new Date()) {
+    if (pfechaNacimiento == 'Invalid Date' || pfechaNacimiento > new Date()){
         error = true;
         inputNacimiento.classList.add('alerta_error');
+        msgErrorFecha.innerText = "Formato de fecha Inválida";
     } else {
         inputNacimiento.classList.remove('alerta_error');
+        msgErrorFecha.innerText = '';
+    }  
+
+    if (inputEdad.value < 15){
+        error = true;
+        inputEdad.classList.add('alerta_error');
+        msgErrorEdad.innerText = "Solo mayores de 15 años";
+    } else {
+        inputEdad.classList.remove('alerta_error');
+        msgErrorEdad.innerText = '';
     }
 
-    return errorFecha;
-}
+    if (pcontrasenna == '') {
+        error = true;
+        inputContrasenna.classList.add('alerta_error');
+        msgErrorContrasena.innerText = "La contraseña no puede estar vacia";
+    } else if (exprContrasenna.test(pcontrasenna) == false) {
+        error = true;
+        inputContrasenna.classList.add('alerta_error');
+        msgErrorContrasena.innerText = "Formato de contraseña inválido";
+    } else {
+        inputContrasenna.classList.remove('alerta_error');
+        msgErrorContrasena.innerText = '';
+    }
+    
+
+  return error;  
+};
+
 
 
 function igualdadContrasenas(contrasenna, confirmarContrasenna) {
@@ -157,8 +204,6 @@ function igualdadContrasenas(contrasenna, confirmarContrasenna) {
         return true;
     }
 };
-
-
 
 
 function calcularEdad() {
@@ -170,4 +215,5 @@ function calcularEdad() {
 };
 
 botonRegistrar.addEventListener('click', obtenerDatos);
+btnSubirFotoPerfil.addEventListener('click', cargarImagen);
 inputNacimiento.addEventListener('change', calcularEdad);

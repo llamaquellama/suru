@@ -16,6 +16,7 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:200,200i,300,300i,400,400i,500,500i,700,700i,800,800i,900,900i"
         rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+        <link rel="shortcut icon" type="image/png" href="./img/FavIconSuru.png"/>
     </head>
     <body>
         <main>
@@ -33,18 +34,20 @@
                 <div class="form-group mb-4">
                     <label for="nombreUsuario" class="text-uppercase">Nombre de usuario</label>
                     <input type="text" id="nombreUsuario" class="form-control form-control-sm">
+                    <label for="" id="errorUsuario" class="msgError colorErrorMsj"></label>
                 </div>
                 <div class="form-group mb-5">
                     <label for="contrasenna" class="text-uppercase">Contraseña</label>
                     <input type="password" id="contrasenna" class="form-control form-control-sm">
+                <label id="errorContrasena" class="msgError colorErrorMsj"></label>
                 </div>
                 <div class="text-center mb-5">
                     <button class="btn btn-block btn-round text-uppercase" id="ingresar">Ingresar</button>
                 </div>
                 <div class="text-center row col" id="enlacesInicioSesion">
-                    <a href="#" class="col-md-8 noEresUsuario" disable>Cambiar contraseña</a>
-                    <a href="registroUsuarios.html" class="font-italic col-md-4 registrar mt-xs-2">Registrar</a>
-                    <a href="#" class="col-md-9 noEresUsuario mt-3 pl-0" disable>Olvido su contraseña?</a>
+                    <a class="col-md-8 noEresUsuario" disable>Cambiar contraseña</a>
+                    <a href="registroVisitantes.html" class="font-italic col-md-4 registrar mt-xs-2">Registrar</a>
+                    <a class="col-md-9 noEresUsuario mt-3 pl-0" disable>Olvidó su contraseña?</a>
                 </div>
             </form>         
         </main>
@@ -65,27 +68,18 @@
                         <h6 class="text-uppercase font-weight-bold">Cuenta</h6>
                         <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                         <p>
-                            <a class="dark-grey-text" href="#!">Iniciar Sesión</a>
+                            <a class="dark-grey-text" href="inicioSesion.html">Iniciar Sesión</a>
                         </p>
                         <p>
-                            <a class="dark-grey-text" href="#!">Registrarse</a>
+                            <a class="dark-grey-text" href="registroVisitantes.html">Registrarse</a>
                         </p>
                         <p>
                             <a class="dark-grey-text" href="#!">Ayuda</a>
                         </p>        
                     </div>        
                     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">        
-                        <h6 class="text-uppercase font-weight-bold">Descubrir</h6>
-                        <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                        <p>
-                            <a class="dark-grey-text" href="#!">Eventos</a>
-                        </p>
-                        <p>
-                            <a class="dark-grey-text" href="#!">Categorías</a>
-                        </p>
-                        <p>
-                            <a class="dark-grey-text" href="#!">Actividades</a>
-                        </p>
+
+
         
                     </div>        
                     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">

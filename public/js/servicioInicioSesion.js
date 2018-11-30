@@ -23,7 +23,7 @@ function validarCredenciales(usuario, contrasenna){
       });
     
       peticion.fail(function(){
-       
+       console.error("Credenciales no válidos");
       });
 
       return respuesta;
