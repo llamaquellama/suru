@@ -15,6 +15,7 @@ let inputYoutube = document.querySelector('#txtYoutube');
 let inputDireccion = document.querySelector('#txtDireccion');
 
 
+
 btnSubirFoto.addEventListener('click', cargarIcono)
 
 function cargarIcono(event) {
