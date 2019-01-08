@@ -46,15 +46,27 @@ font-size: 16px;
 .align-center {
   margin: 0 auto;
 }
-.foto-perfil{
+.foto-perfil {
   max-width: 25%;
   height: auto;
 }
+.foto-perfil-lg {
+  max-width: 35%;
+  height: auto;
+}
+span {
+  color: #828285;
+  font-size: 0.8em;
+  bottom: -3px;
+  margin-bottom: .4rem;
+  
+}
 label{
+  margin-bottom: .4rem;
+  font-size: 0.8em;
   text-transform: uppercase;
   font-size: 0.7em;
   color: #828285;
-  margin-bottom: .4rem;
 }
 .botonRedondo {
   width: 40px;
@@ -72,29 +84,37 @@ label{
   background-color: #85120e;
 
 }
-.botonRedondo i{
+.botonRedondo i {
   color: #fff;
   margin-top: 10px;
 }
 .alerta_error {
   border: 2px solid #eb4d4b;
 }
-.msgError{
+.msgError {
   color: #ff0226 !important;
   font-size: 0.7em;
-  text-transform: lowercase;
   font-weight: bold;
 }
+.linea-perfil{
+  border-top: 1px solid #e8e7e7;
+  padding: 15px 0;
+}
+
 /* Fin estilos para el formulario */
+
 footer {
   font-family: 'Montserrat', sans-serif !important;
   background-color: #fff!important;
 }
+.infoPerfil {
+  width: 65%;
+}
 
-footer a{
+footer a {
   color: #000;
 }
 
-footer a:hover{
+footer a:hover {
   color: #f46654;
 }

@@ -1,0 +1,254 @@
+#navbarNav {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+}
+.jumbotron{
+    margin-bottom: 0px!important;
+}
+.jumbotron{
+    color: #fff;
+}
+.bg {
+    background-image: url("../img/muro-bg.jpg");
+    height: 500px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.btnsuru {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ea4647;
+    color: #fff !important;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 22px;
+    padding: 12px 20px;
+    cursor: pointer;
+}
+
+.btnsuru:hover {
+    background-color: #fff;
+    color: #ea4647 !important;
+    text-decoration: none;
+    border: solid 1px #ea4647;
+
+}
+.pjumbotron {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.h1jumbotron {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    font-weight: 500;
+}
+.far{
+    color:  #ea4647;
+    font-size: 15px;
+}
+.divCalendario{
+    display: inline-block;
+    width: 30%;
+}
+.divFecha{
+    display: inline-block;
+    width: 40%;
+}
+
+.divCalendario .far, .divFecha .far {
+    float: left;
+    line-height: 1.4 !important;
+    margin-right: 8px;
+}
+
+.far:nth-child(2) {
+    padding-left: 15px;
+}
+
+.precio {
+    font-size: 14px;
+    color: #ea4647;
+}
+
+h3{
+    font-family: 'Montserrat', sans-serif !important;
+    font-style: italic;
+    font-weight: 600!important;
+}
+.txt-small{
+    color: #6c757d;
+    font-size: 0.9em;
+    bottom: 5px;
+    vertical-align: middle;
+}
+.bg2 {
+    background-image: url("../img/fondo.jpeg");
+
+    /* Full height */
+    height: 650px;
+    width: 100%;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.box1{
+    padding: 5px;
+    border-radius: 15px;
+    margin: 20px 0;
+    border: 2px solid #f2f3f5;
+}
+.box-lugar{
+    background: #ffffff;
+    width: 100%;
+    padding: 10px 0 10px 10px;
+    display: flow-root;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #f3f3f5;
+
+}
+.thumbContainer{
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin: 0 10px 0 0;
+}
+.thumbnail-img{
+    display: block;
+    float: left;
+    width: 50px;
+    height: 50px !important;
+    box-shadow: 1px 1px 10px #dddbdb;
+}
+.lugarContainer{
+    display: inline-block;
+}
+.lugarContainer h6{
+    margin-bottom: 0;
+    font-size: 1.1rem;
+}
+.lugarContainer small{
+    color: #6c757d;
+}
+
+.card {
+    box-shadow: 1px 1px 10px #dddbdb;
+    margin-bottom: 20px;
+}
+.card-footer {
+    padding: 1.5rem 1.25rem !important;
+}
+.bg3 {
+    background-image: url("../img/fondo3.jpg");
+
+    /* Full height */
+   height: 650px;
+    width: 100%;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.circulo {
+     border-radius: 50%!important;
+     background-color: chocolate;
+}
+
+.categorias {
+    font-family: 'Montserrat', sans-serif;
+
+}
+footer {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+footer a{
+    color: #000;
+}
+
+footer a:hover{
+    color: #f46654;
+}
+
+.lugares {
+    background-color: #f6f6f6;
+}
+.inputBusqueda{
+    display: block;
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    text-decoration: none;
+    font-size: 13px;
+    color: #6033c2;
+    border: 1px solid #dcd8e6;
+    border-radius: 50px;
+    margin-bottom: 10px;
+    color: #6c757d;
+}
+.imgContainer{
+    background: #ea4647;
+    height: 260px;
+    width: 349px;
+}
+.imgContainer img{
+    width: 100%;
+    height: -webkit-fill-available;
+}
+.rating {
+	direction: rtl;
+	unicode-bidi: bidi-override;
+	color: #ddd; /* Personal choice */
+}
+.rating input {
+	display: none;
+}
+.rating label:hover,
+.rating label:hover ~ label,
+.rating input:checked + label,
+.rating input:checked + label ~ label {
+	color: #ea4647;
+}
+.boxInfo{
+    box-shadow: none;
+}
+.boxInfo i {
+    color: #ea4647;
+}
+.card-altura{
+    height: 200px !important;
+    overflow: hidden;
+}
+#txtFiltro {
+    background-color: #fff;
+    border: 1px solid #eae7e7;
+    border-radius: 20px;
+    width: 40%;
+    height: 40px;
+}
+.ratingActividad{
+    display: inline-block;
+    float: left;
+}
+a:not([href]):not([tabindex]) {
+    color: #dc3545;
+}
+.btn-outline-danger:hover {
+    color: #fff !important;
+
+}
+#rating{
+        padding: 12px 0;
+        width: 45%;
+        border-radius: 9px;
+        background: #ECE9E6;
+        background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);
+        background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+}

@@ -25,11 +25,9 @@ function mostrarListaUsuarios() {
         let celdaNombre = fila.insertCell();
         let celdaApellido = fila.insertCell();
         let celdaCorreo = fila.insertCell();
-        let celdaVisualizar = fila.insertCell();
+        // let celdaVisualizar = fila.insertCell();
         let celdaModificar = fila.insertCell();
-        let celdaDeshabilitar = fila.insertCell();
-        let celdaBanear = fila.insertCell();
-        let celdaEliminar = fila.insertCell();
+    
 
         celdaId.innerHTML = listaUsuarios[i]['id'];
         celdaNombreUsuario.innerHTML = listaUsuarios[i]['nombreComercial'];
@@ -37,60 +35,46 @@ function mostrarListaUsuarios() {
         celdaApellido.innerHTML = listaUsuarios[i]['razonSocial'];
         celdaCorreo.innerHTML = listaUsuarios[i]['correoEmpresa'];
 
-        //Icono visualizar
-        let enlaceVisualizar = document.createElement('a');
-        enlaceVisualizar.disabled= true;
-        enlaceVisualizar.classList.add('iconoRedondo');
-        enlaceVisualizar.classList.add('rounded-circle');
-        enlaceVisualizar.classList.add('far');
-        enlaceVisualizar.classList.add('fa-address-book');
-        
-        celdaVisualizar.appendChild(enlaceVisualizar);
+        // //Icono visualizar
+        // let enlaceVisualizar = document.createElement('a');
+        // enlaceVisualizar.href = '#';
+        // enlaceVisualizar.classList.add('far');
+        // enlaceVisualizar.classList.add('fa-address-book');
+        // enlaceVisualizar.dataset.id_usuario = listaUsuarios[i]['_id'];
+
+        // enlaceVisualizar.addEventListener('click', visualizarUsuario);
+
+        // celdaVisualizar.appendChild(enlaceVisualizar); 
 
 
         //Icono editar
         let enlaceModificar = document.createElement('a');
-        enlaceModificar.disabled= true;
-        enlaceModificar.classList.add('iconoRedondo');
-        enlaceModificar.classList.add('rounded-circle');
+        enlaceModificar.href = '#';
         enlaceModificar.classList.add('far');
         enlaceModificar.classList.add('fa-edit');
-        enlaceModificar.classList.add('disabled');
+        enlaceModificar.dataset.id_usuario = listaUsuarios[i]['_id'];
+
+        enlaceModificar.addEventListener('click', MostrarDatosUsuario);
 
         celdaModificar.appendChild(enlaceModificar);
-
-        //Icono deshabilitar
-        let enlaceDeshabilitar = document.createElement('a');
-        enlaceModificar.disabled= true;
-        enlaceDeshabilitar.classList.add('iconoRedondo');
-        enlaceDeshabilitar.classList.add('rounded-circle');
-        enlaceDeshabilitar.classList.add('fas');
-        enlaceDeshabilitar.classList.add('fa-user-slash');
-
-        celdaDeshabilitar.appendChild(enlaceDeshabilitar);
-
-        //Icono bannear
-        let enlaceBannear = document.createElement('a');
-        enlaceBannear.classList.add('iconoRedondo');
-        enlaceBannear.classList.add('rounded-circle');
-        enlaceBannear.classList.add('fas');
-        enlaceBannear.classList.add('fa-ban');
-
-        celdaBanear.appendChild(enlaceBannear);
-
-        //Icono Eliminar
-        let enlaceEliminar = document.createElement('a');
-        enlaceEliminar.classList.add('iconoRedondo');
-        enlaceEliminar.classList.add('rounded-circle');
-        enlaceEliminar.classList.add('far');
-        enlaceEliminar.classList.add('fa-trash-alt');
-
-        celdaEliminar.appendChild(enlaceEliminar);
-
-
+    
      
         }
     }
         
 
+};
+
+function visualizarUsuario(){
+    
+    let id_usuario = this.dataset.id_usuario; //This devuelve el botón, nos metemos al dataset y le pedimos el id
+    localStorage.setItem('usuario' , id_usuario); //crear una variable en la memoria
+    window.location.href = 'informacionUsuarioAdmin.html';
+};
+
+function MostrarDatosUsuario(){
+    
+    let id_usuario = this.dataset.id_usuario;
+    localStorage.setItem('usuario' , id_usuario);
+    window.location.href = 'modificarEmpresarioAdmin.html';
 };

@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,600" rel="stylesheet">
     <link rel="stylesheet" href="css/listarUsuariosStyle.css">
     <link rel="shortcut icon" type="image/png" href="./img/FavIconSuru.png"/>
+    <script src="./js/controladorNav.js"></script>
     <title>Suru | Listar Usuarios</title>
 </head>
 
@@ -20,7 +21,7 @@
 
     <nav class="navbar  navbar-expand-lg navbar-light color-fondo p-0">
         <div class="container">
-            <a href="perfilUsuarioAdministrador.html" class="navbar-brand">
+            <a href="listarUsuariosAdmin.html" class="navbar-brand">
                 <img src="img/logo2.png" width="60" height="60" alt="logo image">
             </a>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -29,28 +30,19 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav pl-md-5">
                     <li class="nav-item px-2">
-                        <a href="perfilUsuarioAdministrador.html" class="nav-link active">Inicio</a>
-                    </li>
-                    <li class="nav-item px-2">
-                        <a href="listarUsuarios.html" class="nav-link">Clientes</a>
-                    </li>
-                    <li class="nav-item px-2">
-                        <a href="listarEmpresarios.html" class="nav-link">Empresarios</a>
-                    </li>
-                    <li class="nav-item px-2">
-                        <a href="registroUsuarios.html" class="nav-link">Registrar Usuario</a>
+                        <a href="listarUsuariosAdmin.html" class="nav-link active">Inicio</a>
                     </li>
                 </ul>
 
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item mr-3">
                         <a class="nav-link">
-                            Bienvenido,
-                            <span style="color:#f99125;"> administrador.</span>
+                           Hola,
+                            <span style="color:#ea4647;" id="usuarioNombreActivo"> </span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <button id="btnCerrarSesion" type="button" class="btn btn-danger btn-sm mt-1">
+                        <button id="btnCerrarSesion" type="button" class="btn btn-sm mt-1">
                             <i class="fas fa-sign-out-alt pr-1"></i>Cerrar sesión
                         </button>
                     </li>
@@ -58,81 +50,115 @@
             </div>
         </div>
     </nav>
-
-    <!-- Menu secundario -->
-    <header id="main-header" class="py-2 color-header mb-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 ml-auto">
-                    <ul class="nav submenu">
-                        <li class="nav-item">
-                            <a class="nav-link" href="listarUsuarios.html">Clientes activos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#">Clientes Deshabilitados</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#">Clientes baneados</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#">Clientes Eliminados</a>
-                        </li>
-                    </ul>
-
+    <main>
+        <div class="wrapper">
+            <!-- Sidebar -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h5>Bienvenido Administrador</h5>
                 </div>
-            </div>
-        </div>
-    </header>
-
-
-    <section id="usuarios">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Clientes Activos</h4>
+            
+                <ul class="list-unstyled components">
+                    <li id="active">
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-user mx-2" ></i>Usuarios</a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li>
+                                <a href="listarUsuarios.html">Clientes</a>
+                            </li>
+                            <li>
+                                <a href="listarEmpresarios.html">Empresarios</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="listarLugaresAdmin.html"><i class="fas fa-map-marker-alt mx-2"></i> Lugares</a>
+                    </li>
+                    <li>
+                        <a href="listarActividadesAdministrador.html"><i class="fas fa-calendar-alt mx-2"></i>
+                            Actividades</a>
+                    </li>
+                    <li>
+                        <a href="listarCategoriasAdmin.html"><i class="fas fa-bookmark mx-2"></i> Categorías</a>
+                    </li>
+                    <li>
+                        <a href="listarPatrocinadorAdmin.html"><i class="fas fa-certificate mx-2"></i> Patrocinadores</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- Page Content -->
+            <div id="content">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    
+                        <button type="button" id="sidebarCollapse" class="btn btnAgregar">
+                            <i class="fas fa-align-left"></i>
+                            <span>Menú</span>
+                        </button>
+    
+    
+                    </nav>
+                    <section id="usuarios">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <div class="card-header px-0">
+                                            <h4>Clientes Activos</h4>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-9 ">
+                                                <label for="txtFiltro"></label>
+                                                <input class="mb-4 py-3" type="text" placeholder="  Buscar usuario" id="txtFiltro">
+                                            </div>
+                    
+                                            <div class="col-md-3" id="divBtnAgregar">
+                                                <a href="registroUsuarios.html" class="button btn btn-block btnAgregar px-3 py-2 ">Registrar
+                                                    Usuario</a>
+                                            </div>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table id="tablaClientes" class="table table-bordered table-hover">
+                                                <thead class="contenido-tabla">
+                                                    <tr>
+                                                        <th>ID</th>
+                                                        <th>Nombre Usuario</th>
+                                                        <th>Nombre</th>
+                                                        <th>Apellido</th>
+                                                        <th>Correo</th>
+                                                        <th>Perfil</th>
+                                                        <th>Editar</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+                    
+                    
+                                        </div>
+                    
+                                    </div>
+                                    <div id="ventanaModalDiv">
+                                        <p id="visualizarNombre" class="text-primary"></p>
+                                        <p id="visualizarId" class="text-primary"></p>
+                                        <p id="visualizarApellido" class="text-primary"></p>
+                                    </div>
+                    
+                    
+                                </div>
+                            </div>
                         </div>
-                        <div class="table-responsive">
-                                <input type="text" id="txtFiltro" class="form-control my-2" placeholder="Buscar Cliente">
-                            <table id="tablaClientes" class="table table-bordered table-hover">
-                                <thead class="contenido-tabla">
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Nombre Usuario</th>
-                                        <th>Nombre</th>
-                                        <th>Apellido</th>
-                                        <th>Correo</th>
-                                        <th>Perfil</th>
-                                        <th>Editar</th>
-                                        <th>Deshabilitar</th>
-                                        <th>Banear</th>
-                                        <th>Eliminar</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                </tbody>
-                            </table>
+                    </section>
 
-
-                        </div>
-
-                    </div>
-                   <div id="ventanaModalDiv">
-                    <p id="visualizarNombre" class="text-primary"></p>
-                    <p id="visualizarId" class="text-primary"></p>
-                    <p id="visualizarApellido" class="text-primary"></p>
-                   </div>
-
-
-                </div>
             </div>
+
         </div>
-    </section>
+    </main>
+    
+
+   
 
     <!-- Footer -->
 
-    <footer class="color-fondo mt-5 p-5 footer-fijo">
+    <footer class="color-fondo p-5 footer-fijo">
 
         <div class="container text-center text-md-left mt-5 ">
             <div class="row mt-3 dark-grey-text">
@@ -144,7 +170,7 @@
                     <div class="text-md-left">
                         <i class="fab fa-facebook-f mr-4"></i>
                         <i class="fab fa-twitter  mr-4"></i>
-                        <i class="fab fa-google-plus-g  mr-4"></i>
+                        <i class="fab fa-instagram mr-4"></i>
                     </div>
 
                 </div>
@@ -203,9 +229,16 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
-    <script src="./js/controladorNav.js"></script>
     <script src="js/servicioListarUsuarios.js"></script>
     <script src="js/controladorListarUsuarios.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
 
 
 </body>

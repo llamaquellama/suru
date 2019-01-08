@@ -16,15 +16,11 @@ function cargarImagen(event) {
     pasarImagen();
 };
 
-let listarPatrocinador = obtenerPatrocinador();
-
-obtenerPatrocinador();
-
 function obtenerDatosPatrocinador(event) {
 
-    let fotoPatrocinador = foto.src;
-    let tipoIndustria = industria.value;
-    let nombrePatrocinador = nombre.value;
+    fotoPatrocinador = foto.src;
+    tipoIndustria = industria.value;
+    nombrePatrocinador = nombre.value;
 
     switch(tipoIndustria){
         case '1':
@@ -88,9 +84,12 @@ function obtenerDatosPatrocinador(event) {
                 type: 'success',
                 title: 'Registro correcto',
                 text: respuesta.msj,
-                confirmButtonText: 'Entendido'
+                confirmButtonText: 'Entendido',
+                timer: 1500
+            }).then(function () {
+                window.location.href = 'listarPatrocinadorAdmin.html';
             });
-            listarPatrocinador = obtenerPatrocinador();
+        
         } else {
             swal({
                 type: 'error',
@@ -98,6 +97,10 @@ function obtenerDatosPatrocinador(event) {
                 text: respuesta.msj,
                 confirmButtonText: 'Entendido'
             });
+
+            fotoPatrocinador = '';
+            tipoIndustria =  '';
+            nombrePatrocinador =  '';
         }
         //mostrarListaCategorias();
     }

@@ -24,48 +24,61 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-
-                <a href="listarCategorias.html" class="navbar-left"><img src="img/logo2.png" alt="logo Suru" width="75px" height="75px"></a>
-                <h3 class="d-inline align-middle">Suru</h3>
-                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNavAltMarkup"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a id="btnCerrarSesion" class="nav-link text-uppercase" href="#">Cerrar sesión</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            </div>
-        </nav>
+            <nav class="navbar  navbar-expand-lg navbar-light color-fondo p-0">
+                    <div class="container">
+                      <a href="listarUsuariosAdmin.html" class="navbar-brand">
+                        <img src="img/logo2.png" width="60" height="60" alt="logo image">
+                        Suru
+                      </a>
+                      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav pl-md-5">
+                          <li class="nav-item px-2">
+                            <a href="listarUsuariosAdmin.html" class="nav-link active">Inicio</a>
+                          </li>
+                        </ul>
+                
+                        <ul class="navbar-nav ml-auto">
+                          <li class="nav-item mr-3">
+                            <a class="nav-link">
+                              Hola,
+                              <label style="color:#ea4647;" id="usuarioNombreActivo"></label>
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <button id="btnCerrarSesion" type="button" class="btn btn-sm mt-1">
+                              <i class="fas fa-sign-out-alt pr-1"></i>Cerrar sesión
+                            </button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </nav>
     </header>
     <main class="pt-5">
-        <form action="" id="formRegistrarCategoria" class=" col-md-4 offset-md-4 py-5 px-5  mt-5 rounded">
-            <h4 class="text-center text-uppercase mb-5">Registrar Categoría</h4>
+        <form action="" id="formRegistrarCategoria" class=" col-md-4 offset-md-4 py-4 px-5  mt-5 rounded">
+            <h4 class="text-center text-uppercase mb-4">Registrar Categoría</h4>
             <div class="">
                 <figure class="imagenHolder mx-auto">
-                    <img src="./img/bannerCategoria.jpg" alt="selecionar imagen de la categoría" id="imagenPrevista" class="my-5 d-block mx-auto" width="300px" height="300px">
+                    <img src="./img/bannerCategoria.jpg" alt="selecionar imagen de la categoría" id="imagenPrevista" class="my-3 d-block mx-auto" width="200px" height="200px">
                 </figure>
-                <div class="mb-5">
+                <div class="mb-4">
                     <button class="btn btn-block btn-round text-uppercase" id="btnSubirImagen"><i class="fas fa-camera"></i><br>Subir icono</button>
                 </div>
             </div>
-            <div class="form-group mb-5">
+            <div class="form-group mb-3">
                 <label for="txtNombreCategoria" class="text-uppercase">Nombre</label>
                 <input type="text" id="txtNombreCategoria" class="form-control form-control-sm">
                 <label for="" id="errorNombre" class="msgError colorErrorMsj"></label>
             </div>
-            <div class="form-group mb-5">
+            <div class="form-group mb-4">
                 <label for="txtareaDescripcion" class="text-uppercase ">Descripción</label>
                 <textarea id="txtareaDescripcion" class="form-control"></textarea>
                 <label for="" id="errorDescripcion" class="msgError colorErrorMsj"></label>
             </div>
-            <div class="text-center mb-5">
+            <div class="text-center mb-3">
                 <button class="btn btn-block btn-round text-uppercase" id="btnRegistrar">Registrar</button>
             </div>
         </form>  
@@ -82,7 +95,7 @@
                     <div class="text-md-left">
                         <i class="fab fa-facebook-f mr-4"></i>
                         <i class="fab fa-twitter  mr-4"></i>
-                        <i class="fab fa-google-plus-g  mr-4"></i>
+                        <i class="fab fa-instagram mr-4"></i>
                     </div>
 
                 </div>

@@ -59,15 +59,15 @@ function obtenerDatos(event){
         if(usuarioAceptado){ 
             switch(usuarioAceptado.tipo){
                  case '3':
-                 window.location.href = 'perfilUsuarioAdministrador.html';
+                 window.location.href = 'listarUsuariosAdmin.html';
                  break;
 
                  case '2':
-                 window.location.href = 'perfilUsuarioEmpresarioDuenno.html';
+                 window.location.href = 'lugaresMuroEmpresario.html';
                  break;
 
                  case '1':
-                 window.location.href = 'perfilUsuarioCliente.html';
+                 window.location.href = 'muroCliente.html';
                  break;
 
                  default:

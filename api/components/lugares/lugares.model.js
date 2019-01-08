@@ -15,7 +15,9 @@ let lugarSchema = new mongoose.Schema({
     nombreCanton: { type: String },
     nombreDistrito: { type: String },
     direccion: {type : String },
-    latitudLongitud: {type : String }
+    latitud: {type : String },
+    longitud: {type : String },
+    nombreUsuario: {type : String }
 
 });
 

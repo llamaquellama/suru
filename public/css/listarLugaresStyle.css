@@ -4,7 +4,9 @@ body {
     background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 
 }
-
+#divBtnAgregar a{
+    display: inline-block;
+}
 /* Estilos de los navs */
 .nav-item a{
     font-size: 0.9em;
@@ -34,22 +36,6 @@ body {
     background: #b3b2b2;
     font-weight: 100;
     text-transform: uppercase;
-}
-
-/* Iconos para mantenimiento usuarios*/
-
-.iconoRedondo {
-    width: 30px;
-    height: 30px;
-    font-size: 1.3em !important;
-    line-height: 1.7; 
-    background-color: #ea4647;
-    display: inline-block;
-    text-align: center;
-    position: relative;
-    color: #fff !important;
-    cursor: pointer;
-
 }
 #txtFiltro{
     background-color: #fff;

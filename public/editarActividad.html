@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css">
+  <link rel="stylesheet" href="css/registroActividades.css">
+  <link rel="stylesheet" href="./css/jquery.flexdatalist.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600" rel="stylesheet">
+  <link rel="stylesheet" href="/maps/documentation/javascript/cgc/demos.css">
+  <link rel="shortcut icon" type="image/png" href="./img/FavIconSuru.png" />
+  <!-- <link rel="stylesheet" href="./css/jquery.flexdatalist.min.css"> -->
+  <title>Suru | Actualizar Actividades</title>
+</head>
+
+<body id="home">
+  <nav class="navbar navbar-expand-md navbar-light pb-2" id="main-nav">
+    <div class="container">
+      <a href="muroEmpresario.html" class="navbar-brand align-center py-5">
+        <img src="img/logo2.png" width="75" height="75" alt="logo image">
+        <br>
+        <h3 class="align-center text-center">Suru</h3>
+      </a>
+    </div>
+  </nav>
+  <section>
+    <section>
+      <div class="container mb-5">
+        <div class="card px-md-5">
+          <div class="card-header">
+            <h5 class="align-center pt-4">Actualizar Actividad</h5>
+          </div>
+          <div class="card-body">
+            <form id="formularioEmpresario">
+              <div class="form-row">
+                <div class="col-md-12 form-group">
+                  <div class="">
+                    <figure class="imagenHolder col-md-8 offset-md-2 offset-sm-2">
+                      <img src="img/actividad3.png" alt="selecionar imagen" id="imagenPrevista" class="img-fluid my-4 d-block align-center">
+                    </figure>
+                    <div class="mb-5">
+                      <button class="btn btn-block btn-round text-uppercase" id="btnSubirImagen"><i class="fas fa-camera"></i><br>Subir
+                        banner</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row mb-5">
+                <div class="col-md-6 form-group pr-md-4 align-center">
+                  <label for="Lugares">Lugar</label>
+                  <input id="Lugares" list="slctLugar" class="datalist-input form-control form-control-sm" placeholder='Seleccione un lugar'
+                    disabled>
+                  <datalist id="slctLugar">
+                  </datalist>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-6 form-group pr-md-4">
+                  <div class="form-row">
+                    <label for="txtNombre">Nombre</label>
+                    <input id="txtNombre" type="text" class="form-control form-control-sm">
+                  </div>
+                </div>
+                <div class="col-md-6 form-group pl-md-4">
+                    <style>.tooltip-inner {
+                        background-color: #fff; 
+                        color: #000;
+                        border: 1px solid #000;
+                    }</style>
+                  <div class="form-row">
+                    <label for="categoria">Categoría</label>
+                    <i class="ml-3 fas fa-info-circle" id="categoriaLabel"></i>
+                    <input type='text' id="slctCategoria" placeholder='Buscar categoría' class='flexdatalist estiloflex'
+                      data-min-length='1' multiple='' data-selection-required='1' list='slctCategoria'>
+
+                    <datalist id="slctCategoria">
+                    </datalist>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-6 form-group pr-md-4">
+                  <div class="form-row mb-3">
+                    <label for="txtFechaInicio">Fecha de inicio</label>
+                    <input id="txtFechaInicio" type="date" class="form-control form-control-sm">
+                  </div>
+                  <div class="form-row ">
+                    <label for="txtFechaFin">Fecha final</label>
+                    <input id="txtFechaFin" type="date" class="form-control form-control-sm">
+                  </div>
+                </div>
+                <div class="col-md-6 form-group pl-md-4">
+                  <div class="form-row mb-3">
+                    <label for="txtHoraInicio">Hora de inicio</label>
+                    <input id="txtHoraInicio" type="time" class="form-control form-control-sm">
+                  </div>
+                  <div class="form-row">
+                    <label for="txtHoraFin">Hora final</label>
+                    <input id="txtHoraFin" type="time" class="form-control form-control-sm">
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-6 form-group pr-md-4">
+                  <div class="form-row">
+                    <label for="txtCosto">Costo</label>
+                    <input id="txtCosto" type="text" class="form-control form-control-sm">
+                  </div>
+                </div>
+                <div class="col-md-6 form-group pl-md-4">
+                  <div class="form-row">
+                    <label for="txtCupos">Cupos Disponibles</label>
+                    <input id="txtCupos" type="text" class="form-control form-control-sm">
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-6 form-group pr-md-4">
+                  <div class="form-row">
+                    <label for="txtEtiquetas">Etiquetas</label>
+                    <input type='text' id="slcEtiqueta" placeholder='Ingresar la etiqueta (s)' class='flexdatalist estiloflex'
+                      data-min-length='1' multiple='multiple' list='slcEtiqueta'>
+                    <datalist id="slcEtiqueta">
+                    </datalist>
+                  </div>
+                </div>
+                <div class="col-md-6 form-group pl-md-4">
+                    <style>.tooltip-inner {
+                        background-color: #fff; 
+                        color: #000;
+                        border: 1px solid #000;
+                    }</style>
+                  <div class="form-row">
+                    <label for="patrocinador">Patrocinadores</label>
+                    <i class="ml-3 fas fa-info-circle" id="patrocinadorLabel"></i>
+                    <input type='text' placeholder='Buscar el patrocinador a selecionar' class='flexdatalist estiloflex'
+                      data-min-length='1' multiple='' data-selection-required='1' list='slctPatrocinador' id="patrocinador">
+
+                    <datalist id="slctPatrocinador">
+                    </datalist>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-6 form-group pr-md-4">
+                  <div class="form-row">
+                    <label for="txtDescripcion">Descripción de la actividad</label>
+                    <textarea id="txtDescripcion" class="col-md-12 form-control form-control-sm"></textarea>
+                  </div>
+                </div>
+                <div class="col-md-6 form-group pl-md-4">
+                  <div class="form-row">
+                    <div class="form-row" id="aportePatrocinador">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-4 form-group pr-md-2">
+                  <label for="sltProvincias">Provincia</label>
+                  <select name="" id="sltProvincias" class="form-control form-control-sm">
+                    <option value="">Seleccione</option>
+                  </select>
+                </div>
+                <div class="col-md-4 form-group pr-md-2">
+                  <label for="sltCantones">Cantón</label>
+                  <select name="" id="sltCantones" class="form-control form-control-sm">
+                    <option value="">Seleccione</option>
+                  </select>
+                </div>
+                <div class="col-md-4 form-group pr-md-2">
+                  <label for="sltDistritos">Distrito</label>
+                  <select name="" id="sltDistritos" class="form-control form-control-sm">
+                    <option value="">Seleccione</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12 form-group">
+                  <label for="txtDireccion">Dirección específica</label>
+                  <textarea class="form-control" id="txtDireccion" rows="3"></textarea>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-12 pb-4 px-0">
+                  <label for="txtMapa">Seleccione la ubicación en el mapa</label>
+                  <div id="map"></div>
+                </div>
+              </div>
+              <!-- <div  class="form-row">
+              <div class="col-12 pb-4 px-0">
+                <label>Seleccione la ubicación</label>
+                <div id="mapa"></div>
+                <input type="text" id="coordenadas" placeholder="Mueva el marcador para ingresar coordenadas" />
+              </div>
+          </div> -->
+              <div class="form-row">
+                <div class="col text-center"> <a id="btnActualizar" class="btn btn-danger btn-lg text-white">Actualizar</a>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="page-footer font-small lighten-5 pt-1">
+
+      <div class="container-fluid text-center text-md-left mt-5 offset-1">
+        <div class="row mt-3">
+          <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+
+            <h6 class="text-uppercase font-weight-bold">Suru</h6>
+            <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <p>Seguínos en Redes Sociales</p>
+            <div class="text-md-left">
+              <i class="fab fa-facebook-f mr-4"></i>
+              <i class="fab fa-twitter  mr-4"></i>
+              <i class="fab fa-instagram mr-4"></i>
+            </div>
+
+          </div>
+
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+            <h6 class="text-uppercase font-weight-bold">Cuenta</h6>
+            <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+
+
+            <p>
+              <a class="dark-grey-text" href="#!">Ayuda</a>
+            </p>
+
+          </div>
+
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+            <h6 class="text-uppercase font-weight-bold">Descubrir</h6>
+            <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <p>
+              <a class="dark-grey-text" href="listarLugares.html">Lugares</a>
+            </p>
+            <p>
+              <a class="dark-grey-text" href="#!">Categorías</a>
+            </p>
+
+          </div>
+
+          <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-md-0 mb-4">
+
+            <h6 class="text-uppercase font-weight-bold">Contacto</h6>
+            <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <p>
+              <i class="fa fa-home mr-3"></i> Limón, Costa Rica</p>
+            <p>
+              <i class="fa fa-envelope mr-3"></i> administracion@suru.com</p>
+            <p>
+              <i class="fa fa-phone mr-3"></i>800 8000</p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <hr>
+      <div class="footer-copyright text-center text-black-50 pb-3">© Suru 2018
+      </div>
+
+
+    </footer>
+  
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="./js/jquery.flexdatalist.min.js"></script>
+    <!-- <script src="./js/jquery.flexdatalist.min.js"></script> -->
+
+    <script src="./js/servicioPerfilActividad.js"></script>
+    <script src="js/mapaModificarActividad.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_PJfUOGeqihhQT-ZS5cx0t7vDlF9xIbo&callback=initMapTest"
+        type="text/javascript" async defer></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+    <script src="./js/servicioRegistroActividad.js"></script>
+    <script src="./js/servicioRegistroCategorias.js"></script>
+    <script src="./js/servicioRegistrarPatrocinadores.js"></script>
+    <script src="js/servicioRegistroLugar.js"></script>
+    <script src="js/servicioDireccion.js"></script>
+
+    <script src="js/controladorDireccion.js"></script>
+    <script src="js/controladorModificarActividad.js"></script>
+
+    <!-- Scripts cloudinary -->
+    <script src="js/servicioImagen.js"></script>
+    <script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
+    <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+</body>
+
+</html>

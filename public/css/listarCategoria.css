@@ -1,0 +1,272 @@
+body {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 16px;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+
+}
+#divBtnAgregar a{
+    display: inline-block;
+}
+/* Estilos de los navs */
+.nav-item a{
+    font-size: 0.9em;
+}
+.submenu li a{
+    text-transform: uppercase;
+    font-size: 0.8em;
+    color: #b7b7b7;
+}
+.submenu li a:hover{
+    text-transform: uppercase;
+    font-size: 0.8em;
+    color: #ea4647;
+}
+
+.color-fondo{
+    background-color: #fff;
+}
+.color-header{
+    background: #eeeeef;
+}
+
+/* Terminan estilos de los Navs */
+
+.contenido-tabla{
+    color: #fff;
+    background: #b3b2b2;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+
+/* Iconos para mantenimiento usuarios*/
+
+#txtFiltro{
+    background-color: #fff;
+    border: 1px solid #eae7e7;
+    border-radius: 20px;
+    width: 70%;
+    height: 40px;
+    font-family: 'Montserrat', sans-serif !important;
+}
+.far{
+color: #000;
+background: white;
+border: 1px solid black;
+padding: 4px 10%;
+border-radius: 5px;
+text-decoration: none !important;
+}
+.far:hover{
+    color: #ea4647;
+}
+
+
+  a {
+      display: inline-block;
+  }
+  /*tamaño de la inmagen en  la tabla*/
+  .imagenTabla{
+   
+    width: 80px;
+    
+}
+.divImagen{
+    width: 10%;
+}
+.divNombreActividad{
+    width: 35%;
+}
+.divDescripcion{
+    width: 35%;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+a, a:hover, a:focus {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+    background: #ea4647;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar .active {
+    margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+  padding: 20px;
+  background: #d93a3b;
+}
+
+#sidebar ul p {
+  color: #fff;
+  padding: 10px;
+}
+
+#sidebar ul li a {
+  padding: 10px;
+  font-size: 1.1em;
+  display: block;
+}
+#sidebar ul li a:hover {
+  color: #ea4647;
+  background: #fff;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+  color: #fff;
+  background: #f05c5d;
+}
+
+a[data-toggle="collapse"] {
+  position: relative;
+}
+
+#content {
+  width: 100%;
+  padding: 20px;
+  min-height: 100vh;
+  transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+      margin-left: -250px;
+  }
+  #sidebar.active {
+      margin-left: 0;
+  }
+}
+
+@media (max-width: 1300px) {
+  #sidebar {
+      margin-left: -250px;
+  }
+  #sidebar.active {
+      margin-left: 0;
+  }
+}
+
+/************/
+
+.table-bordered td, .table-bordered th, .table thead th {
+    border: 0;
+    font-weight: 400;
+    font-size: 0.8em;
+}
+.table-bordered td, .table-bordered th{
+    border-bottom: 2px solid #efeeee;
+    vertical-align: middle;
+    text-align: center;
+}
+.disabled{
+
+     pointer-events: none;
+    cursor: default;
+}
+
+footer {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+footer a{
+    color: #000;
+}
+
+footer a:hover{
+    color: #f46654;
+}
+
+.modalStyle{
+    background: #ea4647;
+    width: 350px;
+    height: 300px;
+}
+
+#tablaListarCategorias {
+    background-color: #fff;
+    box-shadow: 1px 1px 6px #888888;
+}
+
+th {
+    background: #ea4647;
+}
+
+input::placeholder {
+    color: #b5b3b3;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+  }
+
+  .btnAgregar {
+    border: solid 1px #ea4647;
+    text-decoration: none;
+    background-color: #ea4647;
+    color: #fff;
+    border-radius: 23px;
+    font-weight: 300;
+  }
+
+  a {
+      display: inline-block;
+  }
+
+  footer{
+      background: white;
+      padding-top: 10px;
+  }
+  /****/
+
+  a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #d93a3b;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    color: white !important;
+}
+#sidebar ul li a:hover {
+    color: #d93a3b !important;
+    background: #fff;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    background: #d93a3b;
+    color: #fff;
+}
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #d93a3b;
+}

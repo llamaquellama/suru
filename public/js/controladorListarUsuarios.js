@@ -27,9 +27,6 @@ function mostrarListaUsuarios() {
         let celdaCorreo = fila.insertCell();
         let celdaVisualizar = fila.insertCell();
         let celdaModificar = fila.insertCell();
-        let celdaDeshabilitar = fila.insertCell();
-        let celdaBanear = fila.insertCell();
-        let celdaEliminar = fila.insertCell();
 
         celdaId.innerHTML = listaUsuarios[i]['id'];
         celdaNombreUsuario.innerHTML = listaUsuarios[i]['nombreUsuario'];
@@ -38,12 +35,11 @@ function mostrarListaUsuarios() {
         celdaCorreo.innerHTML = listaUsuarios[i]['correo'];
 
         //Icono visualizar
-        let enlaceVisualizar = document.createElement('button');
-        enlaceVisualizar.classList.add('iconoRedondo');
-        enlaceVisualizar.classList.add('rounded-circle');
+        let enlaceVisualizar = document.createElement('a');
+        enlaceVisualizar.href = '#';
         enlaceVisualizar.classList.add('far');
         enlaceVisualizar.classList.add('fa-address-book');
-        enlaceVisualizar.type = 'button';
+        // enlaceVisualizar.type = 'button';
         enlaceVisualizar.dataset.id_usuario = listaUsuarios[i]['_id'];
 
         enlaceVisualizar.addEventListener('click', visualizarUsuario);
@@ -54,43 +50,13 @@ function mostrarListaUsuarios() {
 
         //Icono editar
         let enlaceModificar = document.createElement('a');
+        enlaceModificar.href = '#';
         enlaceModificar.disabled= true;
-        enlaceModificar.classList.add('iconoRedondo');
-        enlaceModificar.classList.add('rounded-circle');
         enlaceModificar.classList.add('far');
         enlaceModificar.classList.add('fa-edit');
         enlaceModificar.classList.add('disabled');
 
         celdaModificar.appendChild(enlaceModificar);
-
-        //Icono deshabilitar
-        let enlaceDeshabilitar = document.createElement('a');
-        enlaceDeshabilitar.classList.add('iconoRedondo');
-        enlaceDeshabilitar.classList.add('rounded-circle');
-        enlaceDeshabilitar.classList.add('fas');
-        enlaceDeshabilitar.classList.add('fa-user-slash');
-
-        celdaDeshabilitar.appendChild(enlaceDeshabilitar);
-
-        //Icono bannear
-        let enlaceBannear = document.createElement('a');
-        enlaceBannear.classList.add('iconoRedondo');
-        enlaceBannear.classList.add('rounded-circle');
-        enlaceBannear.classList.add('fas');
-        enlaceBannear.classList.add('fa-ban');
-
-        celdaBanear.appendChild(enlaceBannear);
-
-        //Icono Eliminar
-        let enlaceEliminar = document.createElement('a');
-        enlaceEliminar.classList.add('iconoRedondo');
-        enlaceEliminar.classList.add('rounded-circle');
-        enlaceEliminar.classList.add('far');
-        enlaceEliminar.classList.add('fa-trash-alt');
-
-        celdaEliminar.appendChild(enlaceEliminar);
-
-
      
         }
     }

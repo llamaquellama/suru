@@ -14,8 +14,8 @@ let usuarioSchema = new mongoose.Schema({
     fechaNacimiento : {type : String, required : false},
     edad : {type : Number, required : false},
     contrasenna : {type : String, required : true},
-    confirmarContrasenna : {type : String, required : false},
     imgPerfil : {type : String, required : false},
+    lugares : {type : String, required : false},
 
 
     /**empresario */
@@ -26,7 +26,6 @@ let usuarioSchema = new mongoose.Schema({
     provincia : {type : String, required : false},
     canton : {type : String, required : false},
     distrito : {type : String, required : false},
-    nombreAContacto : {type : String, required : false},
     nombreBContacto : {type : String, required : false},
     apellidoAContacto : {type : String, required : false},
     apellidoBContacto : {type : String, required : false},
@@ -34,7 +33,8 @@ let usuarioSchema = new mongoose.Schema({
     telContacto : {type : String, required : false},
     nombreProvincia : {type : String, required : false},
     nombreCanton : {type : String, required : false},
-    nombreDistrito : {type : String, required : false}
+    nombreDistrito : {type : String, required : false},
+    direccionExacta : {type : String, required : false}
 
 });
 

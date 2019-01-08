@@ -1,24 +1,22 @@
 
-#navbarNav{
-    font-family: 'Montserrat', sans-serif !important;
-    font-weight: 500;
-    font-size: 13px;
-}
 body {
     font-family: 'Montserrat', sans-serif !important;
 }
-main{
-    background: #cb2d3e;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #ef473a, #cb2d3e);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #ef473a, #cb2d3e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    padding: 0 0 100px 0;
+.btnAgregar{
+    border: solid 1px #ea4647;
+    text-decoration: none;
+    background-color: #ea4647;
+    color: #fff;
+    border-radius: 23px!important;
+  }
+.card{
+    box-shadow: 1px 1px 10px #dddbdb;
 }
 #mainPerfilAct label{
-    color: #566573 ;
+    color: #828285;
 }
 #mainPerfilAct a{
-    color: #ABB2B9;
-    font-size: 15px;
+    color: #000;
 }
 footer {
     font-family: 'Montserrat', sans-serif !important;
@@ -30,4 +28,101 @@ footer a{
 
 footer a:hover{
     color: #f46654;
+}
+
+.imgenAct{
+    height: 275px;
+    width: 325px;
+}
+.imgenLugar{
+    height: 100px;
+    width: 150px;
+}
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+a, a:hover, a:focus {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+    background: #ea4647;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar .active {
+    margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+  padding: 20px;
+  background: #d93a3b;
+}
+.sidebar-header {
+    font-style: italic;
+}
+#sidebar ul p {
+  color: #fff;
+  padding: 10px;
+}
+
+#sidebar ul li a {
+  padding: 10px;
+  font-size: 1.1em;
+  display: block;
+  color: white !important;
+}
+#sidebar ul li a:hover {
+  color: #ea4647!important;
+  background: #fff!important;
+  text-decoration: none !important;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+  color: #fff;
+  background: #f05c5d;
+}
+
+a[data-toggle="collapse"] {
+  position: relative;
+}
+
+#content {
+  width: 100%;
+  padding: 20px;
+  min-height: 100vh;
+  transition: all 0.3s;
+}
+h3 {
+    font-family: 'Montserrat', sans-serif !important;
+    font-style: italic;
+    font-weight: 600!important;
+}
+
+  
+@media (max-width: 768px) {
+  #sidebar {
+      margin-left: -250px;
+  }
+  #sidebar.active {
+      margin-left: 0;
+  }
+}
+
+@media (max-width: 1300px) {
+  #sidebar {
+      margin-left: -250px;
+  }
+  #sidebar.active {
+      margin-left: 0;
+  }
 }

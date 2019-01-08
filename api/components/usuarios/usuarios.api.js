@@ -2,6 +2,7 @@
 
 const nodeMailer = require('nodemailer');
 const usuarioModel = require('./usuarios.model');
+const actividadesModel = require('../actividades/actividades.model');
 
 const transporter = nodeMailer.createTransport({
     service: 'gmail',
@@ -9,7 +10,6 @@ const transporter = nodeMailer.createTransport({
         user: 'mantiscenfo@gmail.com',
         pass: 'surumantis2018'
     }
-
 
 });
 
@@ -28,8 +28,8 @@ module.exports.registrar = function (req, res) {
         fechaNacimiento: req.body.fechaNacimiento,
         edad: req.body.edad,
         contrasenna: req.body.contrasenna,
-        confirmarContrasenna: req.body.confirmarContrasenna,
         imgPerfil: req.body.imgPerfil,
+        lugares : "[]",
 
 
         /** Empresario */
@@ -38,7 +38,6 @@ module.exports.registrar = function (req, res) {
         nombreComercial: req.body.nombreComercial,
         telEmpresa: req.body.telEmpresa,
         correoEmpresa: req.body.correoEmpresa,
-        nombreAContacto: req.body.nombreAContacto,
         nombreBContacto: req.body.nombreBContacto,
         apellidoAContacto: req.body.apellidoAContacto,
         apellidoBContacto: req.body.apellidoBContacto,
@@ -46,7 +45,9 @@ module.exports.registrar = function (req, res) {
         telContacto: req.body.telContacto,
         nombreProvincia: req.body.nombreProvincia,
         nombreCanton: req.body.nombreCanton,
-        nombreDistrito: req.body.nombreDistrito
+        nombreDistrito: req.body.nombreDistrito,
+        direccionExacta: req.body.direccionExacta
+
     });
 
     nuevoUsuario.save(function (error) {
@@ -119,7 +120,8 @@ module.exports.validarCredenciales = function (req, res) {
                     {
                         success: true,
                         tipo: usuario.rolUsuario,
-                        nombre: usuario.nombreUsuario
+                        nombre: usuario.nombreUsuario,
+                        nombre1: usuario.nombre1
                     }
                 );
             } else {
@@ -143,9 +145,78 @@ module.exports.obtenerUsuario = function (req, res) {
             res.sendStatus(404);
     })
 };
-//muestra perfil de usuario al empresario
+//muestra perfil de usuario al administrador
 module.exports.buscar_usuario = function (req, res) {
     usuarioModel.findOne({ _id: req.body.id }).then(
+        function (usuario) {
+            if (usuario) {
+                res.send(usuario);
+            } else {
+                res.send('No se encontró el usuario');
+            }
+        }
+    )
+};
+
+//Busca usuario por nombre de usuario (Actualizar Usuario)
+module.exports.actualizar_usuario = (req, res) => {
+    usuarioModel.update({ nombreUsuario: req.body.nombreUsuario }, req.body, (error, user) => {
+        if (error) {
+            res.json({ success: false, msg: 'No se ha actualizado.' + handleError(error) });
+
+        } else {
+            res.json({ success: true, msg: 'Se ha actualizado correctamente el usuario.' + res });
+        }
+    });
+};
+
+
+//Seguir o dejar de seguir Lugares
+
+module.exports.modificarListaLugares = function (req, res) {
+    const lugarAModificar = req.body.id_lugar;
+    if (!lugarAModificar) {
+        res.json({ success: false, msg: 'ID del lugar es null ' });
+        return;
+    }
+    usuarioModel.findOne({ "nombreUsuario": req.params.nombreUsuario }).then(
+        function (usuario) {
+            let lugar = usuario.lugares.filter(lugar => lugar == lugarAModificar);
+            if (lugar.length == 0) {
+                usuario.lugares.push(actividadAModificar);
+            } else {
+                usuario.lugares.splice(usuario.lugares.indexOf(lugarAModificar), 1);
+            }
+            usuario.save(function (error) {
+                if (error) {
+                    res.json({ success: false, msg: 'No se pudo agregar el lugar, ocurrió el siguiente error ' + error });
+                } else {
+                    res.json({ success: true, msg: 'El lugar se agregó con éxito' });
+                }
+            });
+
+        }
+    )
+};
+
+//Mostrar Lugares seguidos
+module.exports.mostrarLugaresUsuario = function (req, res) {
+    usuarioModel.findOne({ "nombreUsuario": req.params.nombreUsuario }).then(function (usuario) {
+        if (usuario !== null) {
+            lugaresModel.find({
+                '_id': { $in: usuario.lugares }
+            }).then(function (lugares) {
+                res.send(lugares);
+            })
+        } else
+            res.sendStatus(404);
+    })
+};
+
+
+// Para el muro del cliente
+module.exports.obtener_usuario_nombre = function (req, res) {
+    usuarioModel.findOne({ 'nombreUsuario': req.query.nombreUsuario }).then(
         function (usuario) {
             if (usuario) {
                 res.send(usuario);

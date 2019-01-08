@@ -1,9 +1,20 @@
-let conectado = sessionStorage.getItem('conectado');//como se estáconectando eso desde el inicio de sesión?
-const botonCerrarSesion = document.querySelector('#btnCerrarSesion');
-
-function cerrarSesion(){
-    sessionStorage.clear();
-    window.location = 'index.html';
+let conectado = sessionStorage.getItem('conectado');//como se está conectando eso desde el inicio de sesión?
+estaConectado();
+function estaConectado() {
+    if (!conectado) {
+        window.location = 'index.html';
+    }
 }
 
-document.querySelector('#btnCerrarSesion').addEventListener('click', cerrarSesion)
+window.onload = setup;
+
+function setup() {
+    function cerrarSesion() {
+        sessionStorage.clear();
+        window.location = 'index.html';
+    }
+    const usuarioActivo = sessionStorage.getItem('nombre1');
+    const labelNombre = document.querySelector('#usuarioNombreActivo');
+    labelNombre.innerHTML = usuarioActivo;
+    document.querySelector('#btnCerrarSesion').addEventListener('click', cerrarSesion)
+}

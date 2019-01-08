@@ -1,0 +1,175 @@
+<!DOCTYPE hmtl>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,200i,300,300i,400,400i,500,500i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+
+    <link rel="import" href="navMenu.html">
+    <meta name="description" content="Suru: la red social para encontrar lugares y visitarlos. Conocer actividades y eventos en Costa Rica.">
+    <meta name="keywords" content="Suru">
+    <meta name="author" content="Mantis">
+    <link rel="stylesheet" href="css/muroStyles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="./img/FavIconSuru.png" />
+    <script src="./js/controladorNav.js"></script>
+    <title>Suru</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+
+                <a href="index.html" class="navbar-left">
+                    <img src="img/logo2.png" alt="logo Suru" width="75px">
+                </a>
+                <h3 class="d-inline align-middle ml-2">Suru</h3>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav pl-md-5">
+                        <li class="nav-item px-2">
+                            <a href="perfilCliente.html" class="nav-link">Perfil</a>
+                        </li>
+                        <li class="nav-item px-2">
+                            <a href="lugaresMuro.html" class="nav-link">Lugares</a>
+                        </li>
+                        
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item mr-3">
+                            <a class="nav-link">
+                                Hola,
+                                <label style="color:#ea4647;" id="usuarioNombreActivo"></label>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <button id="btnCerrarSesion" type="button" class="btn btn-sm mt-1">
+                                <i class="fas fa-sign-out-alt pr-1"></i>Cerrar sesión
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+
+        <div class="jumbotron jumbotron-fluid bg">
+            <div class="container pt-5 mt-5">
+                <h1 class="text-center mt-5 h1jumbotron">Que inicie la aventura!</h1>
+                <p class="lead text-center pt-5">
+                    <a class="button btnsuru" href="lugaresMuro.html" role="button">EXPLORAR</a>
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="eventos">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div id="boxContainerLugar" class="box1">
+                        <h5 class="ml-3 mt-3">Mis Lugares</h5>
+
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <h3 class="text-center py-4">Próximas actividades</h3>
+                    <input  id="txtFiltro" type="text" class="inputBusqueda ml-3 mb-4" placeholder=" Buscar Actividad">
+                    <div id="card-container">
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer class="page-footer font-small lighten-5">
+
+        <div class="container text-center text-md-left mt-5 ">
+            <div class="row mt-3">
+                <div class="col-md-4 col-lg-4 col-xl-4 mb-4">
+
+                    <h6 class="text-uppercase font-weight-bold">Suru</h6>
+                    <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>Seguínos en Redes Sociales</p>
+                    <div class="text-md-left">
+                        <i class="fab fa-facebook-f mr-4"></i>
+                        <i class="fab fa-twitter  mr-4"></i>
+                        <i class="fab fa-instagram mr-4"></i>
+                    </div>
+
+                </div>
+
+                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
+
+                    <h6 class="text-uppercase font-weight-bold">Descubrir</h6>
+                    <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <a class="dark-grey-text" href="listarLugares.html">Lugares</a>
+                    </p>
+                    <p>
+                        <a class="dark-grey-text" href="listarCategorias.html">Categorías</a>
+                    </p>
+                    <p>
+                        <a class="dark-grey-text" href="listarActividades.html">Actividades</a>
+                    </p>
+
+                </div>
+
+                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-md-0 mb-4">
+
+                    <h6 class="text-uppercase font-weight-bold">Contacto</h6>
+                    <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <i class="fa fa-home mr-3"></i> Limón, Costa Rica</p>
+                    <p>
+                        <i class="fa fa-envelope mr-3"></i> administración@suru.com</p>
+                    <p>
+                        <i class="fa fa-phone mr-3"></i>800 8000</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <hr>
+        <div class="footer-copyright text-center text-black-50 pb-3">© Suru 2018
+        </div>
+
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    
+        <script src="js/jquery-3.3.1.js"></script>
+    <script src="./js/servicioRegistroActividad.js"></script>
+    <script src="./js/servicioRegistroLugar.js"></script>
+    <script src="./js/servicioPerfilUsuario.js"></script>
+    <script src="./js/controladorMuroCliente.js"></script>
+</body>
+
+</html>

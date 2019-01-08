@@ -16,9 +16,8 @@ function cargarIcono(event) {
     event.returnValue = false;
     pasarImagen();
 };
-let listaCategorias = obtenerCategorias();
 
-obtenerCategorias()
+
 //mostrarListaCategorias()
 
 function obtenerDatoscategoria(event) {
@@ -45,8 +44,10 @@ function obtenerDatoscategoria(event) {
                 title: 'Registro correcto',
                 text: respuesta.msj,
                 confirmButtonText: 'Entendido'
+            }) .then(function () {
+                window.location.href = 'listarCategoriasAdmin.html';
             });
-            listaCategorias = obtenerCategorias();
+           
         } else {
             swal({
                 type: 'error',

@@ -5,18 +5,23 @@ let actividadSchema = new mongoose.Schema({
     foto: { type: String },
     nombre: { type: String, required: true, unique: true },
     categoria: { type: String },
-    fecha: { type: String, required: true },
-    hora: { type: String, required: true },
+    fechaInicio: { type: String, required: true },
+    fechaFin: { type: String, required: true },
+    horaInicio: { type: String, required: true },
+    horaFin: { type: String, required: true },
     costo: { type: String, required: true },
     cupos: { type: String, required: true },
     etiquetas: { type: String },
-    patrocinadores: { type: String },
+    patrocinadores: {type: String},
     descripcion: { type: String, required: true },
     nombreProvincia: { type: String }, //cambiar a true cuando este listo el select
     nombreCanton: { type: String },
     nombreDistrito: { type: String },
     direccion: { type: String },
-    ubicacion: {type : String, required : false}
+    latitud: {type : String },
+    longitud: {type : String },
+    nombreLugar: {type : String, required : false},
+    nombreUsuario: {type : String, required : false}
 
 });
 

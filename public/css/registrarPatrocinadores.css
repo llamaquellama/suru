@@ -1,3 +1,7 @@
+header {
+    font-family: 'Montserrat', sans-serif;
+}
+
 .error {
     border: 1px solid red !important;
 }

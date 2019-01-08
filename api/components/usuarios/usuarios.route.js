@@ -34,3 +34,17 @@ router.route('/obtener_usuario/:nombreUsuario')
         usuarioApi.buscar_usuario(req, res);
 
     });
+
+    router.route('/actualizar_usuario')
+    .post(function (req, res) {
+        usuarioApi.actualizar_usuario(req, res);
+    });
+
+
+    // Obtener usuario por Nombre Usuario (Para el follow)
+    
+router.route('/obtener_usuario_nombre')
+.get(function (req, res) {
+    usuarioApi.obtener_usuario_nombre(req, res);
+}); 
+

@@ -18,9 +18,9 @@
 <body>
 
 
-  <nav class="navbar  navbar-expand-lg navbar-light color-fondo p-0">
+<nav class="navbar  navbar-expand-lg navbar-light color-fondo p-0">
     <div class="container">
-      <a href="perfilUsuarioAdministrador.html" class="navbar-brand">
+      <a href="actividades.html" class="navbar-brand">
         <img src="img/logo2.png" width="60" height="60" alt="logo image">
         Suru
       </a>
@@ -32,18 +32,21 @@
           <li class="nav-item px-2">
             <a href="perfilUsuarioAdministrador.html" class="nav-link active">Inicio</a>
           </li>
+          <li class="nav-item px-2">
+            <a href="muroEmpresario.html" class="nav-link active">Muro</a>
+          </li>
         </ul>
 
         <ul class="navbar-nav ml-auto">
           <li class="nav-item mr-3">
             <a class="nav-link">
-              Hola,
-              <span style="color:#ea4647;"> administrador.</span>
+                Hola,
+                <label style="color:#ea4647;" id="usuarioNombreActivo"></label>
             </a>
-          </li>
+        </li>
           <li class="nav-item">
             <button id="btnCerrarSesion" type="button" class="btn btn-sm mt-1">
-              Cerrar sesión
+                <i class="fas fa-sign-out-alt pr-1"></i>Cerrar sesión
             </button>
           </li>
         </ul>
@@ -84,17 +87,17 @@
 
 
             <div class="row">
-              <div class="col-md-10">
+              <div class="col-md-9 col-sm-7 col-lg-10">
                 <label for="txtFiltro"></label>
                 <input class="mb-4 py-3 fas fa-search" type="text" placeholder="   Filtrar" id="txtFiltro" style="font-family: FontAwesome">
               </div>
 
-              <div class="col-md-2">
-              <a href="http://google.com" class="button btnAgregar px-3 py-2">Agregar Lugar</a>
+              <div class="col-md-3 col-sm-5 col-lg-2 mb-sm-5" id="divBtnAgregar">
+                <a href="registro_lugares.html" class="button btn btn-block btnAgregar px-3 py-2 ">Agregar Lugar</a>
+              </div>
             </div>
-          </div>
 
-              <div class="table-responsive">
+              <div class="table-responsive table-responsive-sm table-responsive-md table-responsive-lg mt-2">
                 <table id="tablaLugares" class="table table-bordered table-hover mb-5">
                   <thead class="contenido-tabla">
                     <tr>
@@ -135,7 +138,7 @@
           <div class="text-md-left">
             <i class="fab fa-facebook-f mr-4"></i>
             <i class="fab fa-twitter  mr-4"></i>
-            <i class="fab fa-google-plus-g  mr-4"></i>
+            <i class="fab fa-instagram mr-4"></i>
           </div>
 
         </div>
@@ -188,7 +191,7 @@
 
 
 
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
 
   <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>

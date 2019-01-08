@@ -1,0 +1,144 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+#navbarNav {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.heigth{
+    max-height: 265px;
+   width: 100%;
+}
+
+/*footer*/
+footer {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+footer a{
+    color: #000;
+}
+
+footer a:hover{
+    color: #f46654;
+}
+/*footer*/
+
+.btnAgregar {
+    border: solid 1px #ea4647;
+    text-decoration: none;
+    background-color: #ea4647;
+    color: #fff;
+    border-radius: 23px;
+    font-weight: 300;
+}
+
+  #txtFiltro {
+    background-color: #fff;
+    border: 1px solid #eae7e7;
+    border-radius: 20px;
+    width: 70%;
+    height: 40px;
+}
+/* card dinamico*/
+
+.estiloFas{
+    color: #ea4647;
+    display: inline-block;
+}
+.colorGris{
+    color: gray !important;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+a, a:hover, a:focus {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+    background: #ea4647;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar .active {
+    margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+  padding: 20px;
+  background: #d93a3b;
+}
+.sidebar-header {
+    font-style: italic;
+}
+#sidebar ul p {
+  color: #fff;
+  padding: 10px;
+}
+
+#sidebar ul li a {
+  padding: 10px;
+  font-size: 1.1em;
+  display: block;
+  color: white !important;
+}
+#sidebar ul li a:hover {
+  color: #ea4647!important;
+  background: #fff!important;
+  text-decoration: none !important;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+  color: #fff;
+  background: #f05c5d;
+}
+
+a[data-toggle="collapse"] {
+  position: relative;
+}
+
+#content {
+  width: 100%;
+  padding: 20px;
+  min-height: 100vh;
+  transition: all 0.3s;
+}
+
+.btnAgregar{
+    border: solid 1px #ea4647;
+    text-decoration: none;
+    background-color: #ea4647;
+    color: #fff;
+    border-radius: 23px!important;
+  }
+  
+@media (max-width: 768px) {
+  #sidebar {
+      margin-left: -250px;
+  }
+  #sidebar.active {
+      margin-left: 0;
+  }
+}
+
+@media (max-width: 1300px) {
+  #sidebar {
+      margin-left: -250px;
+  }
+  #sidebar.active {
+      margin-left: 0;
+  }
+}

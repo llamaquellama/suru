@@ -1,0 +1,35 @@
+#navbarNav {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+}
+#navHorizontal nav{
+    background: #cb2d3e;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #ef473a, #cb2d3e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #ef473a, #cb2d3e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 75px 10% 125px 10%;
+    
+}
+#navHorizontal  a{
+    display: inline-block;
+    color: white;
+}
+main #navHorizontal{
+    font-family: 'Montserrat', sans-serif !important;
+}
+.heigth{
+    max-height: 265px;
+   width: 100%;
+}
+
+footer {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+footer a{
+    color: #000;
+}
+
+footer a:hover{
+    color: #f46654;
+}

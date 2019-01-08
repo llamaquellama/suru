@@ -84,6 +84,11 @@ body {
     .error_input {
       border: 2px solid #eb4d4b;
     }
+    .estiloflex{
+      border-radius: 5px;
+      border: 1px solid #cdced0;
+      font-size: 0.9em;
+    }
     /* Fin estilos para el formulario */
 
     footer {

@@ -20,34 +20,22 @@ function mostrarListaLugares() {
 
             let celdaNombre = fila.insertCell();
             let celdaCategoria = fila.insertCell();
-            //let celdaDescripcion = fila.insertCell();
-            //let celdaFacebook = fila.insertCell();
-            //let celdaTwitter = fila.insertCell();
-            //let celdaInstagram = fila.insertCell();
-            //let celdaGoogle = fila.insertCell();
+        
             let celdaProvincia = fila.insertCell();
             let celdaDistrito = fila.insertCell();
             let celdaCanton = fila.insertCell();
-            //let celdaUbicacion = fila.insertCell();
-            // let celdaBtnVer = fila.insertCell();
-            // let celdaBtnEditar = fila.insertCell();
-            // let celdaBtnEliminar = fila.insertCell();
+        
+            let celdaVisualizar = fila.insertCell();
             let celdaConfiguracion = fila.insertCell();
+            let celdaEliminar = fila.insertCell();
             
              celdaNombre.innerHTML = listaLugares[i]['nombre'];
              celdaCategoria.innerHTML = listaLugares[i]['categoria'];
-             //celdaDescripcion.innerHTML = listaLugares[i]['descripcion'];
-            // celdaFacebook.innerHTML = listaLugares[i]['facebook'];
-             //celdaTwitter.innerHTML = listaLugares[i]['twitter'];
-             //celdaInstagram.innerHTML = listaLugares[i]['instagram'];
-            // celdaGoogle.innerHTML = listaLugares[i]['google'];
-             celdaProvincia.innerHTML = listaLugares[i]['provincia'];
-             celdaDistrito.innerHTML = listaLugares[i]['distrito'];
-             celdaCanton.innerHTML = listaLugares[i]['canton'];
-             //celdaUbicacion.innerHTML = listaLugares[i]['ubicacion'];
-            //  celdaBtnVer.innerHTML = '<i id="btn_ver_'+i+'" class="btn_ver btn_ver far fa-eye"></i>';
-            //  celdaBtnEditar.innerHTML = '<i id="btn_ver_'+i+'" class="btn_ver fas fa-edit"></i>';
-            //  celdaBtnEliminar.innerHTML = '<i id="btn_ver_'+i+'" class="btn_ver fas fa-trash-alt"></i>';
+         
+             celdaProvincia.innerHTML = listaLugares[i]['nombreProvincia'];
+             celdaDistrito.innerHTML = listaLugares[i]['nombreDistrito'];
+             celdaCanton.innerHTML = listaLugares[i]['nombreCanton'];
+        
 
              let botonVerMas = document.createElement('a');
              botonVerMas.href = '#';
@@ -57,12 +45,64 @@ function mostrarListaLugares() {
 
              botonVerMas.addEventListener('click', visualizarLugar);
 
-             celdaConfiguracion.appendChild(botonVerMas);
+             let botonEditar = document.createElement('a');
+             botonEditar.href = '#';
+             botonEditar.classList.add('far');
+             botonEditar.classList.add('fa-edit');
+             botonEditar.dataset.id_lugar = listaLugares[i]['_id'];
+
+             botonEditar.addEventListener('click', mostrarDatosEdicion);
+
+             let botonEliminar = document.createElement('a');
+             botonEliminar.href = '#';
+             botonEliminar.classList.add('far');
+             botonEliminar.classList.add('fa-trash-alt');
+             botonEliminar.dataset.id_lugar = listaLugares[i]['_id'];
+
+             botonEliminar.addEventListener('click', confirmarBorrado);
+
+
+             celdaVisualizar.appendChild(botonVerMas);
+             celdaConfiguracion.appendChild(botonEditar);
+             celdaEliminar.appendChild(botonEliminar);
         }
     }
 };
 
 
 function visualizarLugar(){
-    alert(this.dataset.id_lugar);
+
+    let id_lugar = this.dataset.id_lugar;
+    localStorage.setItem('lugar', id_lugar);
+    window.location.href = 'perfil_Lugar.html';
+};
+
+function mostrarDatosEdicion(){
+    let id_lugar = this.dataset.id_lugar;
+    localStorage.setItem('lugar', id_lugar);
+    window.location.href = 'modificar_lugar.html';
+}
+
+function confirmarBorrado(){
+    let id_lugar = this.dataset.id_lugar;
+    swal({
+        title: '¿Está seguro que desea borrar el lugar?',
+        text: "Este proceso no se puede revertir",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, estoy seguro!'
+      }).then((result) => {
+        if (result.value) {
+            borrarLugar(id_lugar);
+            listaLugares = obtenerLugar();
+            mostrarListaLugares ();
+          swal({
+            title:'Lugar borrado',
+            text: 'El lugar ha sido borrado con éxito',
+            type:'success'
+        })
+        }
+      })
 };

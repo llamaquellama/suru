@@ -1,5 +1,5 @@
 let botonRegistrar = document.querySelector('#btnRegistrar');
-const btnSubirFotoPerfil =  document.querySelector('#btnSubirImagen');
+const btnSubirFotoPerfil = document.querySelector('#btnSubirImagen');
 
 
 let inputTipoID = document.querySelector('#slctTipoID');
@@ -14,7 +14,7 @@ let inputNacimiento = document.querySelector('#txtNacimiento');
 let inputEdad = document.querySelector('#txtEdad');
 let inputContrasenna = document.querySelector('#txtContrasenna');
 let inputConfirmarContrasenna = document.querySelector('#txtConfirmarContrasenna');
-const foto =  document.querySelector('#imagenPrevista');
+const foto = document.querySelector('#imagenPrevista');
 
 //Subir foto perfil
 
@@ -54,50 +54,61 @@ function obtenerDatos() {
         });
 
     } else {
-        let respuesta = registrarUsuario(rolUsuario, tipoID, id, nombreUsuario, nombre1, nombre2, apellido1, apellido2, correo, fechaNacimiento, edad, contrasenna, confirmarContrasenna, imgPerfil);
-        if (respuesta.success)
-            swal({
-                type: 'success',
-                title: 'Registrado',
-                text: 'Se han enviado los datos'
-            });
-        else
-            swal({
-                type: 'warning',
-                title: 'No se pudo registrar los datos',
-                text: respuesta.msg
-            });
+
+        let contrasenaIgual = igualdadContrasenas(contrasenna, confirmarContrasenna);
+
+        if (!contrasenaIgual) {
+            error = true;
+            inputConfirmarContrasenna.classList.add('alerta_error');
+            msgErrorConfirmacion.innerText = "Las contraseñas no coinciden";
+        } else {
+            inputConfirmarContrasenna.classList.remove('alerta_error');
+            msgErrorConfirmacion.innerText = '';
+
+            let respuesta = registrarUsuario(rolUsuario, tipoID, id, nombreUsuario, nombre1, nombre2, apellido1, apellido2, correo, fechaNacimiento, edad, contrasenna, imgPerfil);
+
+            if (respuesta.success) {
+
+                swal({
+                    type: 'success',
+                    title: 'Registrado',
+                    text: 'Se han enviado los datos',
+                }).then(function(){
+                    window.location.href = "listarUsuarios.html"; 
+                });
+            }
+            else {
+
+                swal({
+                    type: 'warning',
+                    title: 'No se pudo registrar los datos',
+                    text: respuesta.msg
+                });
+            }
+
+        }
+
     }
 
-    let contrasenaIgual = igualdadContrasenas(contrasenna, confirmarContrasenna);
-
-    if (!contrasenaIgual) {
-        error = true;
-        inputConfirmarContrasenna.classList.add('alerta_error');
-        msgErrorConfirmacion.innerText = "Las contraseñas no coinciden";
-    } else {
-        inputConfirmarContrasenna.classList.remove('alerta_error');
-        msgErrorConfirmacion.innerText = '';
-    }
 
 };
 
 
-function validar(prolUsuario, ptipoID, pid, pnombreUsuario, pnombre1, pnombre2, papellido1, papellido2, pcorreo, pfechaNacimiento, pedad, pcontrasenna ){
+function validar(prolUsuario, ptipoID, pid, pnombreUsuario, pnombre1, pnombre2, papellido1, papellido2, pcorreo, pfechaNacimiento, pedad, pcontrasenna) {
     let error = false;
     let expLetras = /^[a-z A-Záéíóúñ@]+$/;
     let expCorreo = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-    let exprContrasenna =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#])([A-Za-z\d$@$!%*?&#]|[^ ]){8,15}$/;
+    let exprContrasenna = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#])([A-Za-z\d$@$!%*?&#]|[^ ]){8,15}$/;
 
 
-    if (ptipoID == ''){
+    if (ptipoID == '') {
         error = true;
         inputTipoID.classList.add('alerta_error');
     } else {
         inputTipoID.classList.remove('alerta_error');
     }
 
-    if (pid == ''){
+    if (pid == '') {
         error = true;
         inputId.classList.add('alerta_error');
     } else {
@@ -128,7 +139,7 @@ function validar(prolUsuario, ptipoID, pid, pnombreUsuario, pnombre1, pnombre2, 
     }
 
 
-    if (papellido1 == '' || expLetras.test(papellido1) == false){
+    if (papellido1 == '' || expLetras.test(papellido1) == false) {
         error = true;
         inputApellido1.classList.add('alerta_error');
     } else {
@@ -161,16 +172,16 @@ function validar(prolUsuario, ptipoID, pid, pnombreUsuario, pnombre1, pnombre2, 
         msgErrorCorreo.innerText = '';
     }
 
-    if (pfechaNacimiento == 'Invalid Date' || pfechaNacimiento > new Date()){
+    if (pfechaNacimiento == 'Invalid Date' || pfechaNacimiento > new Date()) {
         error = true;
         inputNacimiento.classList.add('alerta_error');
         msgErrorFecha.innerText = "Formato de fecha Inválida";
     } else {
         inputNacimiento.classList.remove('alerta_error');
         msgErrorFecha.innerText = '';
-    }  
+    }
 
-    if (inputEdad.value < 15){
+    if (inputEdad.value < 15) {
         error = true;
         inputEdad.classList.add('alerta_error');
         msgErrorEdad.innerText = "Solo mayores de 15 años";
@@ -191,9 +202,9 @@ function validar(prolUsuario, ptipoID, pid, pnombreUsuario, pnombre1, pnombre2, 
         inputContrasenna.classList.remove('alerta_error');
         msgErrorContrasena.innerText = '';
     }
-    
 
-  return error;  
+
+    return error;
 };
 
 

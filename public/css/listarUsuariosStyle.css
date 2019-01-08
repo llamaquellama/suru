@@ -1,7 +1,8 @@
 body {
     font-family: 'Montserrat', sans-serif !important;
     font-size: 16px;
-    background: #cccaca;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+
     }
 
 /* Estilos de los navs */
@@ -30,36 +31,23 @@ body {
 
 
 .footer-fijo{
-    position: absolute;
     width: 100%;
     height: 100%
 }
 .contenido-tabla{
     color: #fff;
-    background: #b3b2b2;
     font-weight: 100;
     text-transform: uppercase;
 }
 
 /* Iconos para mantenimiento usuarios*/
 
-.iconoRedondo {
-    width: 30px;
-    height: 30px;
-    font-size: 1.3em !important;
-    line-height: 1.7; 
-    background-color: #ea4647;
-    display: inline-block;
-    text-align: center;
-    position: relative;
-    color: #fff !important;
-    cursor: pointer;
-
-}
 #txtFiltro{
-    background-color: #c7c5c5;
+    background-color: #fff;
     border: 1px solid #eae7e7;
-    width: 50%;
+    border-radius: 20px;
+    width: 70%;
+    height: 40px;
 }
 
 /*Estilos Boostrap personalizados*/
@@ -84,6 +72,9 @@ body {
     vertical-align: middle;
     text-align: center;
 }
+#tablaClientes{
+    background: white;
+}
 .disabled{
 
         pointer-events: none;
@@ -107,3 +98,163 @@ footer a:hover{
     width: 350px;
     height: 300px;
 }
+#tablaLugares {
+    background-color: #fff;
+    box-shadow: 1px 1px 6px #888888;
+}
+
+th {
+    background: #ea4647;
+}
+
+input::placeholder {
+    color: #b5b3b3;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+  }
+  
+a {
+    display: inline-block;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+a, a:hover, a:focus {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+    background: #ea4647;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar .active {
+    margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+  padding: 20px;
+  background: #d93a3b;
+}
+
+#sidebar ul p {
+  color: #fff;
+  padding: 10px;
+}
+
+#sidebar ul li a {
+  padding: 10px;
+  font-size: 1.1em;
+  display: block;
+}
+#sidebar ul li a:hover {
+  color: #ea4647;
+  background: #fff;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+  color: #fff;
+  background: #f05c5d;
+}
+
+a[data-toggle="collapse"] {
+  position: relative;
+}
+
+#content {
+  width: 100%;
+  padding: 20px;
+  min-height: 100vh;
+  transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+      margin-left: -250px;
+  }
+  #sidebar.active {
+      margin-left: 0;
+  }
+}
+
+@media (max-width: 1300px) {
+  #sidebar {
+      margin-left: -250px;
+  }
+  #sidebar.active {
+      margin-left: 0;
+  }
+}
+
+.btnAgregar {
+    border: solid 1px #ea4647;
+    text-decoration: none;
+    background-color: #ea4647;
+    color: #fff;
+    border-radius: 23px;
+    font-weight: 300;
+}
+
+  #txtFiltro {
+    background-color: #fff;
+    border: 1px solid #eae7e7;
+    border-radius: 20px;
+    width: 70%;
+    height: 40px;
+}
+
+  /****/
+
+  a[data-toggle="collapse"] {
+    position: relative;
+
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #d93a3b;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    color: white !important;
+}
+#sidebar ul li a:hover {
+    color: #d93a3b !important;
+    background: #fff;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    background: #d93a3b;
+    color: #fff;
+}
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #d93a3b;
+}
+

@@ -19,6 +19,7 @@ function validarCredenciales(usuario, contrasenna){
         sessionStorage.setItem('conectado' , response.success);
         sessionStorage.setItem('tipo' , response.tipo);
         sessionStorage.setItem('nombreUsuario' , response.nombre);
+        sessionStorage.setItem('nombre1' , response.nombre1);
         
       });
     

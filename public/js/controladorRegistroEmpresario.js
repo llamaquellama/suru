@@ -17,6 +17,7 @@ let inputNombreUsuarioEmpresario = document.querySelector('#nombreUsuarioEmpresa
 let inputProvincia = document.querySelector('#sltProvincias');
 let inputCanton = document.querySelector('#sltCantones');
 let inputDistrito = document.querySelector('#sltDistritos');
+let inputDireccionExacta = document.querySelector('#textDireccionExacta');
 
 
 function obtenerDatosEmpresario() {
@@ -35,12 +36,13 @@ function obtenerDatosEmpresario() {
     let contrasennaEmpresario = inputContrasennaEmpresario.value;
     let confirmarContrasennaEmpresario = inputConfirmarContrasennaEmpresario.value;
     let nombreUsuarioEmpresario = inputNombreUsuarioEmpresario.value;
-    let nombreProvincia = inputProvincia.value;
-    let nombreCanton = inputCanton.value;
-    let nombreDistrito = inputCanton.value;
+    let nombreProvincia = provincias.filter(provincia => provincia.idProvincia === parseInt(selectProvincias.value))[0].nombre;
+    let nombreCanton = cantones.filter(canton => canton.idCanton === parseInt(selectCantones.value))[0].nombre;
+    let nombreDistrito = distritos.filter(distrito => distrito.idDistrito === parseInt(selectDistritos.value))[0].nombre;
+    let direccionExacta = inputDireccionExacta.value;
 
 
-    let error = validarEmpresario(rolUsuario, IDJuridico, razonSocial, nombreComercial, telEmpresa, correoEmpresa, nombreAContacto, nombreBContacto, apellidoAContacto, apellidoBContacto, correoContacto, telContacto, contrasennaEmpresario, confirmarContrasennaEmpresario, nombreUsuarioEmpresario);
+    let error = validarEmpresario(IDJuridico, razonSocial, nombreComercial, telEmpresa, correoEmpresa, nombreAContacto, nombreBContacto, apellidoAContacto, apellidoBContacto, correoContacto, telContacto, contrasennaEmpresario, confirmarContrasennaEmpresario, nombreUsuarioEmpresario);
 
 
     if (error == true) {
@@ -51,14 +53,16 @@ function obtenerDatosEmpresario() {
         });
 
     } else {
-        let respuesta = registrarEmpresario(rolUsuario, IDJuridico, razonSocial, nombreComercial, telEmpresa, correoEmpresa, nombreAContacto, nombreBContacto, apellidoAContacto, apellidoBContacto, correoContacto, telContacto, contrasennaEmpresario, confirmarContrasennaEmpresario, nombreUsuarioEmpresario, nombreProvincia, nombreCanton, nombreDistrito);
-        if (respuesta.success)
+        let respuesta = registrarEmpresario(rolUsuario, IDJuridico, razonSocial, nombreComercial, telEmpresa, correoEmpresa, nombreAContacto, nombreBContacto, apellidoAContacto, apellidoBContacto, correoContacto, telContacto, contrasennaEmpresario, nombreUsuarioEmpresario, nombreProvincia, nombreCanton, nombreDistrito, direccionExacta);
+        if (respuesta.success) {
             swal({
                 type: 'success',
                 title: 'Registrado',
-                text: 'Se han enviado los datos'
+                text: 'Se han enviado los datos',
+            }).then(function () {
+                window.location.href = "listarEmpresarios.html";
             });
-            
+        }
         else
             swal({
                 type: 'warning',
@@ -81,18 +85,11 @@ function obtenerDatosEmpresario() {
 
 };
 
-function validarEmpresario(prolUsuario, pIDJuridico, prazonSocial, pnombreComercial, ptelEmpresa, pcorreoEmpresa, pnombreAContacto, pnombreBContacto, papellidoAContacto, papellidoBContacto, pcorreoContacto, ptelContacto, pcontrasennaEmpresario, pconfirmarContrasennaEmpresario, pnombreUsuarioEmpresario) {
+function validarEmpresario(pIDJuridico, prazonSocial, pnombreComercial, ptelEmpresa, pcorreoEmpresa, pnombreAContacto, pnombreBContacto, papellidoAContacto, papellidoBContacto, pcorreoContacto, ptelContacto, pcontrasennaEmpresario, pconfirmarContrasennaEmpresario, pnombreUsuarioEmpresario) {
     let error = false;
     let expLetras = /^[a-z A-Záéíóúñ@]+$/;
     let expCorreo = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    let exprContrasenna =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#])([A-Za-z\d$@$!%*?&#]|[^ ]){8,15}$/;
-
-    if (prolUsuario == '') {
-        error = true;
-        inputIDjuridico.classList.add('alerta_error');
-    } else {
-        inputIDjuridico.classList.remove('alerta_error');
-    }
+    let exprContrasenna = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#])([A-Za-z\d$@$!%*?&#]|[^ ]){8,15}$/;
 
     if (pIDJuridico == '') {
         error = true;
@@ -230,7 +227,7 @@ function igualdadContrasenas(contrasennaEmpresario, confirmarContrasennaEmpresar
     }
 };
 
-function limpiarFormulario(){
+function limpiarFormulario() {
     document.getElementById("formularioEmpresario").reset();
 };
 

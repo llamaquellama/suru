@@ -66,7 +66,8 @@ const usuarios = require('./components/usuarios/usuarios.route');
 const lugares = require('./components/lugares/lugares.route');
 const actividades = require('./components/actividades/actividades.route');
 const patrocinadores = require('./components/patrocinadores/patrocinadores.route');
-const  categorias = require('./components/categorias/categorias.route')
+const categorias = require('./components/categorias/categorias.route');
+const ratings = require('./components/ratings/ratings.route');
 
 
 /**
@@ -76,7 +77,8 @@ app.use('/api', usuarios);
 app.use('/api', lugares);
 app.use('/api', actividades);
 app.use('/api', patrocinadores);
-app.use('/api', categorias)
+app.use('/api', categorias);
+app.use('/api', ratings);
 
 // Se guarda todo lo que se ha realizado
 module.exports = app;

@@ -16,6 +16,7 @@
     <meta name="author" content="Mantis">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="./img/FavIconSuru.png"/>
+    <script src="./js/controladorNav.js"></script>
     <title>Perfil usuario</title>
 </head>
 
@@ -23,7 +24,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
-                <a href="perfilUsuarioEmpresarioDuenno.html" class="navbar-left"><img src="img/Logo2.png" alt="logo Suru" width="75px"></a>
+                <a href="muroEmpresario.html" class="navbar-left"><img src="img/Logo2.png" alt="logo Suru" width="75px"></a>
                 <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNavAltMarkup"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -37,10 +38,29 @@
                             <a class="nav-link text-uppercase" href="registro_lugares.html">Registrar lugares</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase" href="registro_actividades.html">Registrar actividades</a>
+                            <a class="nav-link text-uppercase" href="listarLugarEmpresario.html">Listar lugares</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="lugares.html">lugares</a>
                         </li>
                         <li class="nav-item">
-                            <a id="btnCerrarSesion" class="nav-link text-uppercase" href="#">Cerrar sesión</a>
+                            <a class="nav-link text-uppercase" href="listarActividadesEmpresario.html">actividades</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="registro_actividades.html">Registrar actividades</a>
+                        </li>
+                        <li class="nav-item mr-3">
+                            <a class="nav-link">
+                                Hola,
+                                <label style="color:#ea4647;" id="usuarioNombreActivo"></label>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <button id="btnCerrarSesion" type="button" class="btn btn-sm mt-1">
+                                <i class="fas fa-sign-out-alt pr-1"></i>Cerrar sesión
+                            </button>
                         </li>
                     </ul>
                 </div>
@@ -322,7 +342,6 @@
     <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
     <script src="js/jquery-3.3.1.js"></script>
     <script src="./js/servicioPerfilUsuario.js"></script>
-    <script src="./js/controladorNav.js"></script>
     <script src="./js/controladorPerfilUsuarioEmpresarioDuenno.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
